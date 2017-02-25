@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,17 +10,6 @@
   </head>
 
   <body>
-    <nav class="nav-links">
-      <%= link_to "Home", root_path%>
-      <%= link_to "Map", map_path%>
-      <%= link_to "Know Your Rights", rights_path%>
-      <% if current_user %>
-        <%= link_to "Log Out", logout_path%>
-      <% else %>
-        <%= link_to "Register", new_user_path%>
-        <%= link_to "Log-In", login_path%>
-      <% end %>
-   </nav>
     <%= yield %>
   </body>
 </html>
