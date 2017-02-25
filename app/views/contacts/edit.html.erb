@@ -1,0 +1,11 @@
+<h3>Edit your contacts</h3>
+
+<%= form_for(@contact) do |f| %>
+  <% f.label :nickname %><br>
+  <% f.text_field :nickname %><br>
+  <% f.label :phone_num %><br>
+  <% f.text_field :phone_num %><br>
+  <br>
+  <%= f.submit %>
+  <% end %>
+  
