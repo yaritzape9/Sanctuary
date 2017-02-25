@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      redirect_to #users_path
+      redirect_to #user_path
     else
       render 'new'
     end
@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
 
   def update
     if @contact.update(contact_params)
-      redirect_to #users_path
+      redirect_to #user_path
     else
       render 'edit'
     end
@@ -28,13 +28,12 @@ class ContactsController < ApplicationController
 
   private
 
-  def contact_users
-    params.require(:user).permit(:nickname, :phone_num)
+  def contact_params
+    params.require(:contact).permit(:nickname, :phone_num)
   end
 
   def find_contact
     @contact = Contact.find(params[:phone_num])
   end
-
-
+  
 end
