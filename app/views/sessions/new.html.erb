@@ -1,8 +1,8 @@
-<%= form_for(@user) do |f| %>
- <%= f.label :username %><br>
- <%= f.text_field :username %><br>
- <%= f.label :password %><br>
- <%= f.password_field :password %><br>
+<%= form_tag("/login", method: "post", class: "form") do %>
+ <%= label_tag :username %><br>
+ <%= text_field_tag :username %><br>
+ <%= label_tag :password %><br>
+ <%= password_field_tag :password %><br>
  <br>
- <%= f.submit %>
+ <%= submit_tag %>
  <% end %>
