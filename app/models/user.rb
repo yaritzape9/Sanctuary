@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_many :pins
   has_many :contacts
 
   has_secure_password
