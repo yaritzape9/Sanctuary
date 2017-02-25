@@ -4,6 +4,8 @@ class CreatePins < ActiveRecord::Migration[5.0]
       t.float :longitude
       t.float :latitude
       t.string :description
+
+      t.timestamps
     end
   end
 end
