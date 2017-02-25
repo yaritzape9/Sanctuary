@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
 
   def new
+    @contact = Contact.new(contact_params)
     render 'new'
   end
 
