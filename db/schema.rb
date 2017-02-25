@@ -16,24 +16,30 @@ ActiveRecord::Schema.define(version: 20170224222655) do
   enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "nickname"
-    t.string  "phone_num"
+    t.integer  "user_id"
+    t.string   "nickname"
+    t.string   "phone_num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_contacts_on_user_id", using: :btree
   end
 
   create_table "pins", force: :cascade do |t|
-    t.float  "longitude"
-    t.float  "latitude"
-    t.string "description"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.string "alert_msg"
-    t.string "lang_pref"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "alert_msg"
+    t.string   "lang_pref"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
