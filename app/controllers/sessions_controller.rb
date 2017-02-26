@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       login(@user)
       redirect_to "/"
     else
-      @errors = "Your username or password are invalid"
+      @errors = "Not able to create that pin"
       render :new
     end
   end
@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
     logout
 
     redirect_to root_path
-  end 
+  end
 
 end
