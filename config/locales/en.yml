@@ -20,4 +20,35 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        username:  'username'
+        email:     'email'
+        password:  'password'
+      contact:
+        nickname:  'nickname'
+        phone_num: 'phone_num'
+  views:
+    contacts:
+      edit:
+        form_title:  'Edit your contacts'
+    index:
+      index:
+        mission_label: 'Mission'
+        mission_text:  ''
+    layouts:
+        nav:
+          home_link:   'Home'
+          logout_link: 'Log Out'
+          signup_link: 'Sign Up'
+          login_link:  'Log In'
+          map_link:    'Map'
+          rights_link: 'Your Rights'
+    pins:
+      index:
+        location_name: 'Location'
+        time_label:    'When'
+    sessions:
+      new:
+        
