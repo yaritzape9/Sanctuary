@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       login(@user)
       redirect_to "/"
     else
-      @errors = "Not able to create that pin"
+      @errors = "Not able to create that report"
       render :new
     end
   end
