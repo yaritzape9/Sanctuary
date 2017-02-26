@@ -1,0 +1,7 @@
+<h2>Please register</h2>
+<br>
+<% if @user.errors.any? %>
+  <%= render partial: 'errors', locals: {errors: @user.errors.full_messages} %>
+<% end %>
+
+<%= render 'form' %>
