@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/map', to: 'pins#index', as: 'map'
   post '/map', to: 'pins#create'
 
-  get '/rights', to:'rights#index'
+  get '/rights', to: 'rights#index'
+  
 end
