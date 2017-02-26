@@ -1,27 +1,24 @@
 class PinsController < ApplicationController
 
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy]
 
-  def index
+  def map
+    @pin = Pin.new
     @pins = Pin.all
-    #pins index may be the map view?
   end
 
   def new
-    #won't have an explicit new view I think?
+    @pin = Pin.new
   end
 
   def create
     @pin = Pin.new(pin_params)
 
     if @pin.save
-      redirect_to #pin_path
+      redirect_to map_path
     else
       render 'new'
     end
-  end
-
-  def edit
   end
 
   def update
@@ -34,7 +31,7 @@ class PinsController < ApplicationController
 
   private
 
-  def pin_users
+  def pin_params
     params.require(:pin).permit(:latitude, :longitude)
   end
 
