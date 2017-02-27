@@ -10,7 +10,7 @@
   <%= form_tag pins_path, method: :post do |f| %>
     <%= hidden_field_tag 'pin[latitude]', '' %>
     <%= hidden_field_tag 'pin[longitude]', '' %>
-    <%= submit_tag 'Create Report'%>
+    <%= submit_tag 'Create Report', :class=>"btn"%>
   <% end %>
 
 <% end %>

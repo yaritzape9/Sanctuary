@@ -30,3 +30,13 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.btn {
+  background-color: #667292;
+}
+.bnt:hover, .btn-large:hover {
+  background-color: #bccad6;
+}
+.nav-wrapper, .page-footer {
+  background-color: #8d9db6;
+}
