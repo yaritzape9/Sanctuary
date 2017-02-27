@@ -10,15 +10,18 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <br>
-    <br>
-    <%= yield %>
+    <main>
+      <br>
+      <br>
+      <br>
+      <%= yield %>
+      <br>
+      <br>
+      <br>
+      <br>
+    </main>
+      <div id="footer">
+          <%= render 'layouts/footer' %>
+      </div>
   </body>
-  <br>
-  <br>
-  <br>
-  <br>
-  <footer>
-    <%= render 'layouts/footer' %>
-  </footer>
 </html>
