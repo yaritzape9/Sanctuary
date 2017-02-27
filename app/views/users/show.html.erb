@@ -1,6 +1,6 @@
-<h3>Enter a contact in case of emergencies.</h3>
+<h4>Enter a contact in case of emergencies.</h4>
 
-<%= form_tag(@contact) %>
+<%= form_tag(@contact) do %>
 <%= hidden_field_tag 'user_id', @user.id %>
-  <%= submit_tag 'Add an emergency contact' %>
+  <div class="waves-effect waves-light btn"><%= submit_tag 'Add contact' %></div>
 <% end %>
