@@ -16,15 +16,12 @@
 
 @import "materialize";
 
-
-
 h4 {
   margin-left: 4%;
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
+    min-height: 150vh;
     flex-direction: column;
 }
 main {
@@ -39,4 +36,10 @@ main {
 }
 .nav-wrapper, .page-footer {
   background-color: #8d9db6;
+}
+.slide-caption {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
