@@ -1,4 +1,4 @@
-<!-- Map (partial?) here -->
+<%= render 'pins/map' %>
 
 <div id="report-details">
   Location?
@@ -8,9 +8,9 @@
 <% if current_user %>
 
   <%= form_tag pins_path, method: :post do |f| %>
-  <%= hidden_field_tag 'pin[latitude]', '' %>
-  <%= hidden_field_tag 'pin[longitude]', '' %>
-  <%= submit_tag 'Create Report'%>
+    <%= hidden_field_tag 'pin[latitude]', '' %>
+    <%= hidden_field_tag 'pin[longitude]', '' %>
+    <%= submit_tag 'Create Report'%>
   <% end %>
 
 <% end %>
