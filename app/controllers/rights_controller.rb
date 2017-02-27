@@ -1,7 +1,7 @@
 class RightsController < ApplicationController
 
   def index
-    render 'layouts/rights'
+    render 'index'
   end
 
 end
