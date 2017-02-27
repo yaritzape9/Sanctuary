@@ -2,9 +2,14 @@ class PinsController < ApplicationController
 
   before_action :find_pin, only: [:show, :edit, :update, :destroy]
 
-  def map
+  def index
     @pin = Pin.new
     @pins = Pin.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @pins }
+    end
   end
 
   def new
