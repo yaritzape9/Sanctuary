@@ -1,5 +1,5 @@
 <div class="container">
-<h5>Emergency Contacts:</h5>
+<h4>Emergency Contacts</h5>
 <br>
   <% @user.contacts.each do |c|%>
   <div class="contact-display"><img class="phone-img" src="../phone.png"></div> <div class="contact-display"> <%= c.nickname %>: <%= c.phone_num %></div><br>
@@ -7,5 +7,4 @@
   <% end %>
   <br>
   <%= link_to "Add Contact", new_contact_path, class: "waves-effect waves-light btn"%>
-  <br>
 </div>
