@@ -1,20 +1,13 @@
 $( document ).ready(function() {
-  // geocodeSearch(stringOnInputStop());
-  console.log('doc ready');
+
   appendMapScript();
+
 });
 
-// function geocodeSearch(input) {
-//   var geocoder = new google.maps.Geocoder();
-//
-//   function geocodeAddress(geocoder, resultsMap)
-// }
-
 function appendMapScript() {
-  console.log($('#map'));
   $('#map').append('<script async defer ' +
     'src="https://maps.googleapis.com/maps/api/js?key=' +
-    'AIzaSyAfBUbEVb_FUnLMJSzzbp_siSXedx93Kvc&callback=initMap">' +
+    'AIzaSyAfBUbEVb_FUnLMJSzzbp_siSXedx93Kvc&libraries=places&callback=initMap">' +
     '</script>');
 }
 
@@ -34,6 +27,8 @@ function initMap() {
       center: {lat: position.coords.latitude, lng: position.coords.longitude}
     });
 
+    initAutocomplete(map);
+
     var request = $.ajax({
       url:      '/map',
       method:   'get',
@@ -51,17 +46,17 @@ function initMap() {
 
       infoWindowArray.push(infoWindow);
 
-      var latLng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
-
-      geocoder.geocode({'location': latLng}, function(results, status) {
+      geocoder.geocode({'location': location}, function(results, status) {
         if (status === 'OK') {
           if (results[1]) {
             infoWindow.setContent(results[1].formatted_address);
           } else {
-            infoWindow.setContent(latLng.lat + ', ' + latLng.lng);
+            console.log(location);
+            infoWindow.setContent(location.lat + ', ' + location.lng);
           }
         } else {
-          infoWindow.setContent(latLng.lat + ', ' + latLng.lng);
+          console.log(location);
+          infoWindow.setContent(location.lat + ', ' + location.lng);
         }
       });
 
@@ -71,12 +66,14 @@ function initMap() {
     }
 
     request.done( function(response) {
+      // console.log(response);
       for (var i = 0; i < response.length; i++) {
+        // console.log(response[i]);
         var latLngLiteral = {
           lat: response[i].latitude,
           lng: response[i].longitude
         };
-
+        // console.log(latLngLiteral);
         placeDatabaseMarker(latLngLiteral);
       }
     });

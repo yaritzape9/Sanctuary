@@ -1,4 +1,5 @@
-function placeUserMarker(location) {
+function placeUserMarker(location, addressString) {
+
   var marker = new google.maps.Marker({
     position: location,
     map: map
@@ -11,34 +12,51 @@ function placeUserMarker(location) {
   infoWindowArray.push(infoWindow);
 
   var geocoder = new google.maps.Geocoder();
-  var latLng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
+  var LatLngLiteral = {lat: marker.position.lat(), lng: marker.position.lng()};
   var address;
 
-  geocoder.geocode({'location': latLng}, function(results, status) {
-    if (status === 'OK') {
-      if (results[1]) {
-        setInfoWindow(results[1].formatted_address);
+  if (!addressString) {
+    geocoder.geocode({'location': LatLngLiteral}, function(results, status) {
+      if (status === 'OK') {
+        if (results[1]) {
+          address = results[1].formatted_address;
+          setInfoWindow(address);
+        } else {
+          // console.log(LatLngLiteral);
+          address = location.lat + ', ' + location.lng;
+          setInfoWindow(address);
+        }
       } else {
-        setInfoWindow(latLng.lat + ', ' + latLng.lng);
+        // console.log(LatLngLiteral);
+        address = location.lat + ', ' + location.lng;
+        setInfoWindow(address);
       }
-    } else {
-      setInfoWindow(latLng.lat + ', ' + latLng.lng);
-    }
-  });
-
-  function setInfoWindow(address) {
-    infoWindow.setContent('<p>Report raid at or near<br>' + address + ' ?</p><div id="new_pin_form"></div>');
+    });
+  } else {
+    setInfoWindow(addressString);
   }
+
+  function setInfoWindow(inputAddress) {
+    $('#_form #pin_latitude').val(location.lat);
+    $('#_form #pin_longitude').val(location.lng);
+
+    var form = $('#_form').html();
+
+    infoWindow.setContent(
+      '<p id="ask_if_report">Report raid at or near<br>' +
+      inputAddress + ' ?</p>' +'<div id="new_pin_form">' +
+      form +'</div>'
+      );
+
+    $('#_form #pin_latitude').val('');
+    $('#_form #pin_longitude').val('');
+  }
+
+  infoWindow.open(map, marker);
 
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.open(map, marker);
-
-    var $pinDiv = $('#new_pin_form');
-    var form = $('#_form').html();
-
-    $pinDiv.html(form);
-
-    $('#new_pin_form #pin_latitude').val(location.lat());
-    $('#new_pin_form #pin_longitude').val(location.lng());
   });
+
+  return marker;
 }

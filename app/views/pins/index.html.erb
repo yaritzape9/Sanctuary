@@ -1,18 +1,3 @@
 <div id="map">
   <%= render 'pins/map' %>
 </div>
-
-<div id="report-details">
-  Location?
-  Date/Time?
-</div>
-
-<% if current_user %>
-
-  <%= form_tag pins_path, method: :post do |f| %>
-    <%= hidden_field_tag 'pin[latitude]', '' %>
-    <%= hidden_field_tag 'pin[longitude]', '' %>
-    <%= submit_tag 'Create Report', :class=>"btn"%>
-  <% end %>
-
-<% end %>
