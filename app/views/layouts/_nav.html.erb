@@ -3,7 +3,7 @@
     <ul id="nav-mobile" class="left">
 
     <% if current_user %>
-      <li class="panic-button"><%= link_to "Alert!", user_path(current_user)%></li>
+      <li class="panic-button red"><%= link_to "Report A Raid!", user_path(current_user)%></li>
       <li><%= link_to "Welcome #{current_user.username}", user_path(current_user)%></li>
     <% end %>
 
