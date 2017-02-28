@@ -29,7 +29,8 @@ main {
 }
 
 .btn {
-  background-color: #667292;
+  background-color: #80bfff;
+  //brighter color
 }
 .bnt:hover, .btn-large:hover {
   background-color: #bccad6;
@@ -42,4 +43,15 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.slider .indicators .indicator-item.active {
+    background-color: #667292;
+}
+
+.page-footer .footer-copyright {
+  background-color: #7386a5;
+}
+.footer-li {
+  font-size: 12px;
 }
