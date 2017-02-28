@@ -1,6 +1,11 @@
-<h4>Enter a contact in case of emergencies.</h4>
+<div class="container">
+<h5>Emergency Contacts:</h5>
+<br>
+  <% @user.contacts.each do |c|%>
+  <div class="contact-display"><img class="phone-img" src="../phone.png"></div> <div class="contact-display"> <%= c.nickname %>: <%= c.phone_num %></div><br>
 
-<%= form_tag(@contact) do %>
-<%= hidden_field_tag 'user_id', @user.id %>
-  <div class="waves-effect waves-light btn"><%= submit_tag 'Add contact' %></div>
-<% end %>
+  <% end %>
+  <br>
+  <%= link_to "Add Contact", new_contact_path, class: "waves-effect waves-light btn"%>
+  <br>
+</div>
