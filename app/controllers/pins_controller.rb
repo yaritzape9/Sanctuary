@@ -1,13 +1,10 @@
 class PinsController < ApplicationController
 
   before_action :find_pin, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
     @pin = Pin.new
     @pins = Pin.all
-
-    # gon.my_session_variable = session[:user_id]
 
     respond_to do |format|
       format.html
@@ -22,16 +19,17 @@ class PinsController < ApplicationController
   def create
     if current_user
       @pin = Pin.new(pin_params)
-      flash[:error] = "Unable to save pin." if @pin.save.false?
-    end
-    redirect_to map_path
-  end
 
-  def update
-    if @pin.update(pin_params)
-      redirect_to #pin_path
+      if @pin.save
+        redirect_to map_path
+      else
+        flash[:unable] = "We were unable to save the report. Please try again later."
+        redirect_to map_path
+      end
+
     else
-      render 'edit'
+      flash[:login] = "You need to register or log in."
+      redirect_to login_path
     end
   end
 
@@ -44,6 +42,4 @@ class PinsController < ApplicationController
   def find_pin
     @pin = Pin.find(params[:phone_num])
   end
-
-
 end
