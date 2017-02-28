@@ -1,6 +1,19 @@
+
+
 <div id="map-container">
   <div id="map-canvas"></div>
 </div>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfBUbEVb_FUnLMJSzzbp_siSXedx93Kvc&callback=initMap">
-</script>
+
+<input type='submit' value="Locate Me" style='display:inline;'>
+<input id="address" name="address" placeholder="Enter a full address or intersection." 'display:inline;'>
+<div id="_form" class="hidden">
+  <% if current_user %>
+
+    <%= form_tag pins_path, method: :post do |f| %>
+      <%= hidden_field_tag 'pin[latitude]', '' %>
+      <%= hidden_field_tag 'pin[longitude]', '' %>
+      <%= submit_tag 'Create Report'%>
+    <% end %>
+
+  <% end %>
+</div>
