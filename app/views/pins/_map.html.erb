@@ -4,16 +4,13 @@
   <div id="map-canvas"></div>
 </div>
 
-<input type='submit' value="Locate Me" style='display:inline;'>
-<input id="address" name="address" placeholder="Enter a full address or intersection." 'display:inline;'>
+<button style='display:inline;' class="btn">Locate Me</button>
+<input id="address" name="address" placeholder="Start Typing A Location">
+
 <div id="_form" class="hidden">
-  <% if current_user %>
-
-    <%= form_tag pins_path, method: :post do |f| %>
-      <%= hidden_field_tag 'pin[latitude]', '' %>
-      <%= hidden_field_tag 'pin[longitude]', '' %>
-      <%= submit_tag 'Create Report'%>
-    <% end %>
-
+  <%= form_tag pins_path, method: :post do |f| %>
+    <%= hidden_field_tag 'pin[latitude]', '' %>
+    <%= hidden_field_tag 'pin[longitude]', '' %>
+    <%= submit_tag 'Create Report', :class => "btn"%>
   <% end %>
 </div>
