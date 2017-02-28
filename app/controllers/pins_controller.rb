@@ -1,10 +1,13 @@
 class PinsController < ApplicationController
 
   before_action :find_pin, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
     @pin = Pin.new
     @pins = Pin.all
+
+    # gon.my_session_variable = session[:user_id]
 
     respond_to do |format|
       format.html
@@ -17,13 +20,11 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = Pin.new(pin_params)
-
-    if @pin.save
-      redirect_to map_path
-    else
-      render 'new'
+    if current_user
+      @pin = Pin.new(pin_params)
+      flash[:error] = "Unable to save pin." if @pin.save.false?
     end
+    redirect_to map_path
   end
 
   def update

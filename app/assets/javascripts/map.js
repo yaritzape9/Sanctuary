@@ -1,5 +1,27 @@
+$( document ).ready(function() {
+  // geocodeSearch(stringOnInputStop());
+  console.log('doc ready');
+  appendMapScript();
+});
+
+// function geocodeSearch(input) {
+//   var geocoder = new google.maps.Geocoder();
+//
+//   function geocodeAddress(geocoder, resultsMap)
+// }
+
+function appendMapScript() {
+  console.log($('#map'));
+  $('#map').append('<script async defer ' +
+    'src="https://maps.googleapis.com/maps/api/js?key=' +
+    'AIzaSyAfBUbEVb_FUnLMJSzzbp_siSXedx93Kvc&callback=initMap">' +
+    '</script>');
+}
+
 var map;
 var pinArray;
+var infoWindowArray = [];
+var userMarkerArray = [];
 
 function initMap() {
 
@@ -18,15 +40,16 @@ function initMap() {
       dataType: 'json'
     });
 
-    function placeMarker(location) {
+    function placeDatabaseMarker(location) {
       var marker = new google.maps.Marker({
         position: location,
         map: map
       });
 
-
       var geocoder = new google.maps.Geocoder();
       var infoWindow = new google.maps.InfoWindow();
+
+      infoWindowArray.push(infoWindow);
 
       var latLng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
 
@@ -50,16 +73,30 @@ function initMap() {
     request.done( function(response) {
       for (var i = 0; i < response.length; i++) {
         var latLngLiteral = {
-          lat: response[i].longitude,
-          lng: response[i].latitude
+          lat: response[i].latitude,
+          lng: response[i].longitude
         };
 
-        placeMarker(latLngLiteral);
+        placeDatabaseMarker(latLngLiteral);
       }
     });
 
+    function closeAllInfoWindows() {
+      for (var i = 0; i < infoWindowArray.length; i++) {
+        infoWindowArray[i].close();
+      }
+    }
+
+    function removeUnsavedMarkers() {
+      for (var i = 0; i < userMarkerArray.length; i++) {
+        userMarkerArray[i].setMap(null);
+      }
+    }
+
     google.maps.event.addListener(map, 'click', function(event) {
-       placeMarker(event.latLng);
+       closeAllInfoWindows();
+       removeUnsavedMarkers();
+       placeUserMarker(event.latLng);
     });
   }
 }
