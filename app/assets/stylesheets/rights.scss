@@ -1,1 +1,46 @@
+.your-rights {
+  background-color: #eceff1;
+}
 
+.chevron-div {
+  margin-left: 4%;
+  display: inline-block;
+  position: relative;
+
+  .chevron{
+    display: inline-block;
+    height: 45px;
+    width: 35px;
+  }
+}
+
+.title {
+  padding-left: 15px;
+  font-size: 26px !important;
+}
+
+.question-div {
+  display: inline-block;
+  position: relative;
+}
+
+.rights-container {
+  height: fit-content;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-left: 7%;
+  margin-right: 8%;
+  background-color: #cfd8dc;
+
+  .rights-list {
+
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+
+  }
+}
+
+li {
+
+  font-size: 24px !important;
+}
