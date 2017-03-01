@@ -6,7 +6,12 @@
     If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.<br>
     Once clicked, any contacts entered on your list of contats will be notified with the following message:</p>
     <br>
+    <%= render 'users/messageform' %>
     <br>
+    Your message:<br>
+    <% if @user.alert_msg %>
+      <%= @user.alert_msg %>
+    <% end %>
   <h5>Your Emergency Contacts</h5>
   <br>
     <% @user.contacts.each do |c|%>
