@@ -37,24 +37,25 @@ function centerMap(position) {
       closeAllInfoWindows();
       removeUnsavedMarkers();
       map.setCenter(latLngLiteral);
+      map.setZoom(10);
     }
   });
 
   google.maps.event.addListenerOnce(map, 'idle', function(){
 
     initAutocomplete();
-    //
-    // navigator.geolocation.getCurrentPosition(function(position) {
-    //   var latLngLiteral = {
-    //     lat: position.coords.latitude,
-    //     lng: position.coords.longitude
-    //   };
-    //
-    //   closeAllInfoWindows();
-    //   removeUnsavedMarkers();
-    //   map.setCenter(latLngLiteral);
-    //   map.setZoom(7);
-    // });
+    
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latLngLiteral = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      closeAllInfoWindows();
+      removeUnsavedMarkers();
+      map.setCenter(latLngLiteral);
+      map.setZoom(7);
+    });
 
     var request = $.ajax({
       url:      '/map',
