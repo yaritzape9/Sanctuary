@@ -17,32 +17,34 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = Pin.new(pin_params)
+    if current_user
+      @pin = Pin.new(pin_params)
 
-    if @pin.save
-      redirect_to map_path
-    else
-      render 'new'
-    end
-  end
+      if @pin.save
 
-  def update
-    if @pin.update(pin_params)
-      redirect_to #pin_path
+        respond_to do |format|
+          format.html
+          format.json { render json: @pin, status: :created }
+          format.js
+        end
+      else
+        flash[:unable] = "We were unable to save the report. Please try again later."
+        redirect_to map_path
+      end
+
     else
-      render 'edit'
+      flash[:login] = "You need to register or log in."
+      redirect_to login_path
     end
   end
 
   private
 
   def pin_params
-    params.require(:pin).permit(:latitude, :longitude)
+    params.require(:pin).permit(:latitude, :longitude, :address)
   end
 
   def find_pin
     @pin = Pin.find(params[:phone_num])
   end
-
-
 end

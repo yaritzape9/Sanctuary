@@ -1,10 +1,12 @@
-<h3>Please Login</h3>
+<h4>Please Login</h4>
 
-<%= form_tag("/login", method: "post", class: "form") do %>
- <%= label_tag "Username" %><br>
- <%= text_field_tag :username %><br>
- <%= label_tag "Password" %><br>
- <%= password_field_tag :password %><br>
- <br>
- <%= submit_tag %>
- <% end %>
+<div class="reg-login-form">
+  <%= form_tag("/login", method: "post", class: "form") do %>
+     <%= label_tag "Username" %><br>
+     <%= text_field_tag :username %><br>
+     <%= label_tag "Password" %><br>
+     <%= password_field_tag :password %><br>
+     <br>
+     <div class="waves-effect waves-light btn"><%= submit_tag "Login"%></div>
+   <% end %>
+</div>
