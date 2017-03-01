@@ -18,14 +18,16 @@ class UsersController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
+      
   end
 
   def update
     if @user.update(user_params)
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render 'edit'
     end
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation,:alert_msg)
   end
 
   def find_user
