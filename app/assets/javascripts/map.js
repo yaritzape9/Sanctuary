@@ -22,36 +22,39 @@ function centerMap(position) {
     center: {lat: 39.504041, lng: -97.558594}
   });
 
-
-  $('#locate_button').on('click', function(){
+  $('.locate-button').on('click', function(){
     event.preventDefault();
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(doButton);
+
+    function doButton(position) {
+      console.log(position);
       var latLngLiteral = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+      console.log(latLngLiteral);
 
       closeAllInfoWindows();
       removeUnsavedMarkers();
       map.setCenter(latLngLiteral);
-    });
+    }
   });
 
-
   google.maps.event.addListenerOnce(map, 'idle', function(){
+
     initAutocomplete();
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var latLngLiteral = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      closeAllInfoWindows();
-      removeUnsavedMarkers();
-      map.setCenter(latLngLiteral);
-      map.setZoom(7);
-    });
+    //
+    // navigator.geolocation.getCurrentPosition(function(position) {
+    //   var latLngLiteral = {
+    //     lat: position.coords.latitude,
+    //     lng: position.coords.longitude
+    //   };
+    //
+    //   closeAllInfoWindows();
+    //   removeUnsavedMarkers();
+    //   map.setCenter(latLngLiteral);
+    //   map.setZoom(7);
+    // });
 
     var request = $.ajax({
       url:      '/map',
