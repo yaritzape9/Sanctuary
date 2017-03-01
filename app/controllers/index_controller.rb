@@ -1,5 +1,5 @@
 class IndexController < ApplicationController
   def index
-    render "index"
+    render "blank-view"
   end
 end
