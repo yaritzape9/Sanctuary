@@ -3,7 +3,7 @@
 }
 
 #map-container {
-   height: 400px;
+   height: 500px;
    border-radius: 16px 16px;
    border-color: #fff;
    border-style: solid;
@@ -14,6 +14,31 @@
 }
 
 #map-canvas {
- height: 384px;
+ height: 100%;
  width: 100%;
+}
+
+.locate-container {
+  padding: 0 25% 5%;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.indent {
+  padding-left: 2%;
+}
+.indent-2 {
+  padding-left: 4%;
+}
+
+#address {
+  top-padding: 2%
+}
+
+.locate-button {
+  display: inline;
+  margin: 5%;
 }

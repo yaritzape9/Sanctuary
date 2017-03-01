@@ -2,18 +2,6 @@
   <div id="map-canvas"></div>
 </div>
 
-<button id="locate_button" style='display:inline;' class="btn">Locate Me</button>
-<input id="address" name="address" placeholder="Start Typing A Location">
-
-<div id="_form" class="hidden">
-  <%= form_tag pins_path, method: :post, id: 'new_pin_form', remote: true do |f| %>
-    <%= hidden_field_tag 'pin[latitude]', '' %>
-    <%= hidden_field_tag 'pin[longitude]', '' %>
-    <%= hidden_field_tag 'pin[address]', '' %>
-    <%= submit_tag 'Create Report', :class => "btn", :id => 'save_pin_button'%>
-  <% end %>
-</div>
-
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfBUbEVb_FUnLMJSzzbp_siSXedx93Kvc&libraries=places&callback=initMap">
 </script>
