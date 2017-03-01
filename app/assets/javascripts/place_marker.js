@@ -43,9 +43,9 @@ function setUserInfoWindow(inputInfoWindow, inputLocation, inputAddressString) {
 
     function next(formHtml) {
       inputInfoWindow.setContent(
-        '<span id="ask_if_report">Report raid at or near</span><br><br>' +
+        '<span id="ask_if_report">Report raid at or near<br><br></span>' +
         '<span id="address">' + inputAddressString +
-        ' ?</span><br><br>' + '<div id="new_pin">' + formHtml +'</div>'
+        ' </span><span id="question_mark">?</span><br><br>' + '<div id="new_pin">' + formHtml +'</div>'
       );
     }
   }
