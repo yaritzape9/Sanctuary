@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get '/rights', to: 'rights#index'
 
+  post '/alert', to: 'twilio#trigger_sms_alerts', as: 'alert'
+
 end

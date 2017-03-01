@@ -1,15 +1,17 @@
 class ContactsController < ApplicationController
 
   def new
-    @contact = Contact.new(contact_params)
+    @contact = Contact.new()
+
     render 'new'
   end
 
   def create
-    @contact = Contact.new(contact_params)
 
+    @contact = Contact.new(contact_params)
+    @contact.user = current_user
     if @contact.save
-      redirect_to #user_path
+      redirect_to user_path(@contact.user)
     else
       render 'new'
     end
@@ -35,5 +37,5 @@ class ContactsController < ApplicationController
   def find_contact
     @contact = Contact.find(params[:phone_num])
   end
-  
+
 end
