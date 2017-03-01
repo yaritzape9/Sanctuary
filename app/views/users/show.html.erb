@@ -1,11 +1,18 @@
 <div class="container">
-<h5>Emergency Contacts:</h5>
-<br>
-  <% @user.contacts.each do |c|%>
-  <div class="contact-display"><img class="phone-img" src="../phone.png"></div> <div class="contact-display"> <%= c.nickname %>: <%= c.phone_num %></div><br>
 
-  <% end %>
+  <h5>Welcome to your contacts page!</h5>
+
+  <p>Please enter names and phone numbers for up to 5 emergency contacts.<br>
+    If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.<br>
+    Once clicked, any contacts entered on your list of contats will be notified with the following message:</p>
+    <br>
+    <br>
+  <h5>Your Emergency Contacts</h5>
   <br>
-  <%= link_to "Add Contact", new_contact_path, class: "waves-effect waves-light btn"%>
-  <br>
+    <% @user.contacts.each do |c|%>
+    <div class="contact-display"><img class="phone-img" src="../phone.png"></div> <div class="contact-display"> <%= c.nickname %>: <%= c.phone_num %></div><br>
+
+    <% end %>
+    <br>
+    <%= link_to "Add Contact", new_contact_path, class: "waves-effect waves-light btn"%>
 </div>

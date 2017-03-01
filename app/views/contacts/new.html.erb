@@ -1,8 +1,13 @@
+<br>
+<div class="reg-login-form">
 <%= form_for(@contact) do |f| %>
  <%= f.label :nickname %><br>
  <%= f.text_field :nickname %><br>
  <%= f.label :phone_num %><br>
  <%= f.text_field :phone_num %><br>
  <br>
+<div class="waves-effect waves-light btn">
  <%= f.submit %>
+</div>
  <% end %>
+</div>

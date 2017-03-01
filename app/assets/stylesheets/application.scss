@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 @import "materialize";
 
 h4 {
@@ -21,7 +20,6 @@ h4 {
 }
 
 body {
-    min-height: 150vh;
     flex-direction: column;
 }
 main {
@@ -29,12 +27,12 @@ main {
 }
 
 .btn {
-  background-color: #80bfff;
-  //brighter color
+  background-color: #8da4b9;
 }
 .bnt:hover, .btn-large:hover {
-  background-color: #bccad6;
+  background-color: #acbdcc;
 }
+
 .nav-wrapper, .page-footer {
   background-color: #8d9db6;
 }
@@ -54,4 +52,10 @@ main {
 }
 .footer-li {
   font-size: 12px;
+}
+.panic-button:hover {
+  box-shadow: 0 17px 20px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.main-container {
+  padding-bottom: 10%;
 }

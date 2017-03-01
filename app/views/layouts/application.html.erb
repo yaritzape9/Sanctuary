@@ -4,23 +4,20 @@
     <title>Sanctuary</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
-    <main>
-
+    <nav>
+      <%= render 'layouts/nav' %>
+    </nav>
+    <main class="main-container">
       <%= yield %>
-      <br>
-      <br>
-      <br>
-      <br>
     </main>
-      <div id="footer">
-          <%= render 'layouts/footer' %>
-      </div>
+      <footer>
+        <%= render 'layouts/footer' %>
+      </footer>
   </body>
 </html>
