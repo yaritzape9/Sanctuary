@@ -1,8 +1,8 @@
+var map;
+
 $( document ).ready(function() {
-  
 });
 
-var map;
 var pinArray;
 var infoWindowArray = [];
 var userMarkerArray = [];
@@ -13,17 +13,45 @@ function initMap() {
 
   geocoder = new google.maps.Geocoder();
 
-  navigator.geolocation.getCurrentPosition(centerMap);
+  centerMap();
 }
 
 function centerMap(position) {
   map = new google.maps.Map(document.getElementById('map-canvas'), {
-    zoom: 15,
-    center: {lat: position.coords.latitude, lng: position.coords.longitude}
+    zoom: 4,
+    center: {lat: 39.504041, lng: -97.558594}
   });
+
+
+  $('#locate_button').on('click', function(){
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latLngLiteral = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      closeAllInfoWindows();
+      removeUnsavedMarkers();
+      map.setCenter(latLngLiteral);
+    });
+  });
+
 
   google.maps.event.addListenerOnce(map, 'idle', function(){
     initAutocomplete();
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latLngLiteral = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      closeAllInfoWindows();
+      removeUnsavedMarkers();
+      map.setCenter(latLngLiteral);
+      map.setZoom(7);
+    });
 
     var request = $.ajax({
       url:      '/map',
