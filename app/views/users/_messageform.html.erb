@@ -1,0 +1,9 @@
+<% if @user.alert_msg == nil %>
+  <div class="reg-login-form">
+    <%= form_for (@user) do |f|%>
+      <%= f.label :Message  %>
+      <%=f.text_field :alert_msg  %>
+      <%= f.submit "add message"%>
+    <% end %>
+  </div>
+<% end %>
