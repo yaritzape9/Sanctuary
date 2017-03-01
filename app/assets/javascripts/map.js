@@ -37,15 +37,12 @@ function centerMap(position) {
     });
 
     request.done( function(response) {
-      console.log(response);
       for (var i = 0; i < response.length; i++) {
-        console.log(response[i]);
         var latLngLiteral = {
           lat: response[i].latitude,
           lng: response[i].longitude
         };
 
-        console.log(latLngLiteral);
         if (!response[i].address) {
           reverseGeocode(latLngLiteral, next);
         } else {
@@ -72,6 +69,23 @@ function centerMap(position) {
 
     function next(inputAddressString) {
       placeUserMarker(event.latLng, inputAddressString);
+    }
+  });
+}
+
+function reverseGeocode(inputLocation, callback) {
+  var coordinateString = inputLocation.lat + ', ' + inputLocation.lng;
+  var addressString;
+
+  geocoder.geocode({'location': inputLocation}, function(results, status) {
+    if (status === 'OK') {
+      if (results[1]) {
+        callback(results[1].formatted_address);
+      } else {
+        return coordinateString;
+      }
+    } else {
+      return coordinateString;
     }
   });
 }
