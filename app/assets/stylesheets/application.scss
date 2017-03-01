@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
 @import "materialize";
 
 h4 {
@@ -33,6 +32,7 @@ main {
 .bnt:hover, .btn-large:hover {
   background-color: #acbdcc;
 }
+
 .nav-wrapper, .page-footer {
   background-color: #8d9db6;
 }
