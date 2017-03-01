@@ -1,0 +1,44 @@
+.hidden {
+  display: none;
+}
+
+#map-container {
+   height: 500px;
+   border-radius: 16px 16px;
+   border-color: #fff;
+   border-style: solid;
+   box-shadow: 2px 2px 10px #B1B1B1;
+   margin-top: 25px;
+   border-width: 7px;
+   margin: 0 50px 0 50px;
+}
+
+#map-canvas {
+ height: 100%;
+ width: 100%;
+}
+
+.locate-container {
+  padding: 0 25% 5%;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.indent {
+  padding-left: 2%;
+}
+.indent-2 {
+  padding-left: 4%;
+}
+
+#address {
+  top-padding: 2%
+}
+
+.locate-button {
+  display: inline;
+  margin: 5%;
+}
