@@ -1,12 +1,10 @@
-function initAutocomplete(map) {
+function initAutocomplete() {
   var input = document.getElementById('address');
   var searchBox = new google.maps.places.SearchBox(input);
 
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
   });
-
-  var markers = [];
 
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
@@ -15,10 +13,8 @@ function initAutocomplete(map) {
       return;
     }
 
-    markers.forEach(function(marker) {
-      marker.setMap(null);
-    });
-    markers = [];
+
+    removeUnsavedMarkers();
 
     var bounds = new google.maps.LatLngBounds();
 
@@ -28,11 +24,9 @@ function initAutocomplete(map) {
         return;
       }
 
-      // console.log(place)
-      markers.push(placeUserMarker(place.geometry.location, place.formatted_address));
+      placeUserMarker(place.geometry.location, place.formatted_address);
 
       if (place.geometry.viewport) {
-        // Only geocodes have viewport.
         bounds.union(place.geometry.viewport);
       } else {
         bounds.extend(place.geometry.location);
