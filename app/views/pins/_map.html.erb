@@ -1,11 +1,19 @@
-
-
 <div id="map-container">
   <div id="map-canvas"></div>
 </div>
+<div class="locate-container">
+  <h5 class="title">How to report an ICE raid</h5>
+  <ul>
+    <li>1. Hit the LOCATE ME button to adjust the map.</li>
+    <button class="btn locate-button">Locate Me</button>
+    <li>2. Report by:</li>
+    <li class="indent">a. Typing in an address, intersection, or landmark. Hit enter to search and a pop-up to report the raid will appear.</li>
+    <li class="indent-2">or</li>
+    <li class="indent">b. click on the map below and a pop-up to report the raid will appear</li>
+  </ul>
 
-<button style='display:inline;' class="btn">Locate Me</button>
-<input id="address" name="address" placeholder="Start Typing A Location">
+  <input id="address" name="address" placeholder="Search By Address...">
+</div>
 
 <div id="_form" class="hidden">
   <%= form_tag pins_path, method: :post do |f| %>
