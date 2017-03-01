@@ -27,11 +27,17 @@ main {
 }
 
 .btn {
-  background-color: #8da4b9;
+  background-color: #E56A60;
 }
-.bnt:hover, .btn-large:hover {
-  background-color: #acbdcc;
+.btn:hover {
+  background-color: #C22A20;
 }
+
+.waves-effect {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: #C88F8B;
+    }
 
 .nav-wrapper, .page-footer {
   background-color: #8d9db6;
