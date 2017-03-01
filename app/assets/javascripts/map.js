@@ -1,10 +1,5 @@
 $( document ).ready(function() {
-  // appendMapScript();
-
-  $('#map-container').on("ajax:success", '#new_pin form', function(e, data, status, xhr) {
-
-  });
-
+  
 });
 
 var map;

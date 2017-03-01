@@ -13,7 +13,6 @@ function initAutocomplete() {
       return;
     }
 
-
     removeUnsavedMarkers();
 
     var bounds = new google.maps.LatLngBounds();
