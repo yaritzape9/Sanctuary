@@ -21,7 +21,12 @@ class PinsController < ApplicationController
       @pin = Pin.new(pin_params)
 
       if @pin.save
-        redirect_to map_path
+
+        respond_to do |format|
+          format.html
+          format.json { render json: @pin, status: :created }
+          format.js
+        end
       else
         flash[:unable] = "We were unable to save the report. Please try again later."
         redirect_to map_path
@@ -36,7 +41,7 @@ class PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:latitude, :longitude)
+    params.require(:pin).permit(:latitude, :longitude, :address)
   end
 
   def find_pin

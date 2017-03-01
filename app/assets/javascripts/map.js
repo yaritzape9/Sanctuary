@@ -1,33 +1,57 @@
+var map;
+
 $( document ).ready(function() {
-
-  appendMapScript();
-
 });
 
-function appendMapScript() {
-  $('#map').append('<script async defer ' +
-    'src="https://maps.googleapis.com/maps/api/js?key=' +
-    'AIzaSyAfBUbEVb_FUnLMJSzzbp_siSXedx93Kvc&libraries=places&callback=initMap">' +
-    '</script>');
-}
-
-var map;
 var pinArray;
 var infoWindowArray = [];
 var userMarkerArray = [];
+var infoWindowMarkerToSave;
+var geocoder;
 
 function initMap() {
 
-  navigator.geolocation.getCurrentPosition(centerMap);
+  geocoder = new google.maps.Geocoder();
 
-  function centerMap(position) {
+  centerMap();
+}
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-      zoom: 15,
-      center: {lat: position.coords.latitude, lng: position.coords.longitude}
+function centerMap(position) {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    zoom: 4,
+    center: {lat: 39.504041, lng: -97.558594}
+  });
+
+
+  $('#locate_button').on('click', function(){
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latLngLiteral = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      closeAllInfoWindows();
+      removeUnsavedMarkers();
+      map.setCenter(latLngLiteral);
     });
+  });
 
-    initAutocomplete(map);
+
+  google.maps.event.addListenerOnce(map, 'idle', function(){
+    initAutocomplete();
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latLngLiteral = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      closeAllInfoWindows();
+      removeUnsavedMarkers();
+      map.setCenter(latLngLiteral);
+      map.setZoom(7);
+    });
 
     var request = $.ajax({
       url:      '/map',
@@ -35,65 +59,69 @@ function initMap() {
       dataType: 'json'
     });
 
-    function placeDatabaseMarker(location) {
-      var marker = new google.maps.Marker({
-        position: location,
-        map: map
-      });
-
-      var geocoder = new google.maps.Geocoder();
-      var infoWindow = new google.maps.InfoWindow();
-
-      infoWindowArray.push(infoWindow);
-
-      geocoder.geocode({'location': location}, function(results, status) {
-        if (status === 'OK') {
-          if (results[1]) {
-            infoWindow.setContent(results[1].formatted_address);
-          } else {
-            console.log(location);
-            infoWindow.setContent(location.lat + ', ' + location.lng);
-          }
-        } else {
-          console.log(location);
-          infoWindow.setContent(location.lat + ', ' + location.lng);
-        }
-      });
-
-      google.maps.event.addListener(marker, 'click', function() {
-        infoWindow.open(map, marker);
-      });
-    }
-
     request.done( function(response) {
-      // console.log(response);
       for (var i = 0; i < response.length; i++) {
-        // console.log(response[i]);
         var latLngLiteral = {
           lat: response[i].latitude,
           lng: response[i].longitude
         };
-        // console.log(latLngLiteral);
-        placeDatabaseMarker(latLngLiteral);
+
+        if (!response[i].address) {
+          reverseGeocode(latLngLiteral, next);
+        } else {
+          next(response[i].address);
+        }
+      }
+
+      function next(inputAddressString) {
+        placeDatabaseMarker(latLngLiteral, inputAddressString);
       }
     });
+  });
 
-    function closeAllInfoWindows() {
-      for (var i = 0; i < infoWindowArray.length; i++) {
-        infoWindowArray[i].close();
-      }
+  google.maps.event.addListener(map, 'click', function(event) {
+    closeAllInfoWindows();
+    removeUnsavedMarkers();
+
+    var latLngLiteral = {
+     lat: event.latLng.lat(),
+     lng: event.latLng.lng()
+    };
+
+    reverseGeocode(latLngLiteral, next);
+
+    function next(inputAddressString) {
+      placeUserMarker(event.latLng, inputAddressString);
     }
+  });
+}
 
-    function removeUnsavedMarkers() {
-      for (var i = 0; i < userMarkerArray.length; i++) {
-        userMarkerArray[i].setMap(null);
+function reverseGeocode(inputLocation, callback) {
+  var coordinateString = inputLocation.lat + ', ' + inputLocation.lng;
+  var addressString;
+
+  geocoder.geocode({'location': inputLocation}, function(results, status) {
+    if (status === 'OK') {
+      if (results[1]) {
+        callback(results[1].formatted_address);
+      } else {
+        return coordinateString;
       }
+    } else {
+      return coordinateString;
     }
+  });
+}
 
-    google.maps.event.addListener(map, 'click', function(event) {
-       closeAllInfoWindows();
-       removeUnsavedMarkers();
-       placeUserMarker(event.latLng);
-    });
+function closeAllInfoWindows() {
+  for (var i = 0; i < infoWindowArray.length; i++) {
+    infoWindowArray[i].close();
   }
+}
+
+function removeUnsavedMarkers() {
+  for (var i = 0; i < userMarkerArray.length; i++) {
+    userMarkerArray[i].setMap(null);
+  }
+  userMarkerArray = [];
 }

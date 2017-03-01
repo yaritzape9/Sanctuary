@@ -1,0 +1,15 @@
+
+$('#_form #pin_latitude').val('');
+$('#_form #pin_longitude').val('');
+$('#_form #pin_address').val('');
+
+$('#ask_if_report').remove();
+$('#question_mark').remove();
+$('#save_pin_button').remove();
+$('#new_pin').append('<span>Report Saved</span>');
+
+markerArrayIndex = userMarkerArray.findIndex(function(element) {
+  element == infoWindowMarkerToSave;
+});
+
+userMarkerArray.slice(markerArrayIndex, 1);
