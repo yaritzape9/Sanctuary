@@ -5,6 +5,7 @@ class TwilioController < ApplicationController
   def trigger_sms_alerts
     alert_message = "current_user.alert_msg"
     contacts = current_user.contacts
+    
     if contacts.empty?
       flash[:alert] = "You have no contacts. Try adding contacts"
     else
