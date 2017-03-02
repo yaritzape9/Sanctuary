@@ -2,7 +2,7 @@
   <div>
     <%= form_for (@user) do |f|%>
       <%= f.label :Message  %>
-      <%=f.text_field :alert_msg  %>
+      <%=f.text_field :alert_msg, :maxlength => "153" %>
       <div class="waves-effect waves-light btn"><%= f.submit "Create Message"%></div>
     <% end %>
   </div>
