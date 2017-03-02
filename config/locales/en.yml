@@ -41,15 +41,20 @@ en:
       footer:
         who_title: 'Who We Are'
         who_body:  'We are a team that includes black, Latina, Vietnamese, and
-        trans women—some of us the daughters of immigrants. We are dedicated to
-        making an impact on the tech scene by giving back to our community.'
+          trans women—some of us the daughters of immigrants. We are dedicated
+          to making an impact on the tech scene by giving back to our
+          community.'
+        navigation_title: 'Navigation'
+        home_link_text:   'Home'
+        Map_link_text:    'Log Out'
+        rights_link_text: 'Your Rights'
         nav:
-          home_link:   'Home'
-          logout_link: 'Log Out'
-          signup_link: 'Sign Up'
-          login_link:  'Log In'
-          map_link:    'Map'
-          rights_link: 'Your Rights'
+          home_link_text: 'Home'
+          logout_link:    'Log Out'
+          signup_link:    'Sign Up'
+          login_link:     'Log In'
+          map_link:       'Map'
+          rights_link:    'Your Rights'
     pins:
       index:
         location_name: 'Location'
