@@ -29,7 +29,6 @@ en:
       contact:
         nickname:  'Nickname'
         phone_num: 'Phone Number'
-<<<<<<< HEAD
   views:
     contacts:
       edit:
