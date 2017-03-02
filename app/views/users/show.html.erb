@@ -1,4 +1,3 @@
-<div class="container">
   <div class="user-show-welcome">
     <h5>Welcome to your profile page.</h5>
     <h6>Here, you can set your emergency message and contacts.</h6>
@@ -22,6 +21,7 @@
         If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.<br>
         Once clicked, any contacts entered on your list of contats will be notified with your entry.</p>
 
+
     <% @user.contacts.each do |c|%>
   <p>
     <div class="contact-display">
@@ -31,3 +31,5 @@
     <% end %>
   </p>
     <%= render 'contacts/new' %>
+
+

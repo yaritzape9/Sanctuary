@@ -1,12 +1,12 @@
-<h4>Please Login</h4>
+<h4><%= t '.title' %></h4>
 
 <div class="reg-login-form">
   <%= form_tag("/login", method: "post", class: "form") do %>
-     <%= label_tag "Username" %><br>
+     <%= label_tag :username %><br>
      <%= text_field_tag :username %><br>
-     <%= label_tag "Password" %><br>
+     <%= label_tag :password %><br>
      <%= password_field_tag :password %><br>
      <br>
-     <div class="waves-effect waves-light btn"><%= submit_tag "Login"%></div>
-   <% end %>
+     <div class="waves-effect waves-light btn"><%= submit_tag t('.submit_tag_label')%></div>
+  <% end %>
 </div>
