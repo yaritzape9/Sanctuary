@@ -29,6 +29,28 @@ en:
       contact:
         nickname:  'Nickname'
         phone_num: 'Phone Number'
+  views:
+    contacts:
+      edit:
+        title:  'Edit your contacts'
+    index:
+      index:
+        mission_label: 'Mission'
+        mission_text:  ''
+    layouts:
+        nav:
+          home_link:   'Home'
+          logout_link: 'Log Out'
+          signup_link: 'Sign Up'
+          login_link:  'Log In'
+          map_link:    'Map'
+          rights_link: 'Your Rights'
+    pins:
+      index:
+        location_name: 'Location'
+        time_label:    'When'
+    sessions:
+      new:
   contacts:
     edit:
       form_title:  'Edit your contacts'
