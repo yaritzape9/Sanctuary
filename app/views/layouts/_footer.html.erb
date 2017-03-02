@@ -1,24 +1,40 @@
 <footer class="page-footer">
-     <div class="container">
-       <div class="row">
-         <div class="col l6 s12">
-           <h5 class="white-text">Who We Are</h5>
-           <p class="grey-text text-lighten-4">We are a black, Latina, Vietnamese, and Trans women - some of us the daughters of immigrants. We are dedicated to making an impact on the tech scene by giving back to our community.</p>
-         </div>
-         <div class="col l4 offset-l2 s12">
-           <h5 class="white-text">Navigation</h5>
-           <ul>
-             <li><%= link_to "Home", root_path, class: "grey-text text-lighten-4" %></li>
-             <li><%= link_to "Map", map_path, class: "grey-text text-lighten-4" %></li>
-             <li><%= link_to "Your Rights", rights_path, class: "grey-text text-lighten-4" %></li>
+   <div class="container">
+     <div class="row">
+       <div class="col l6 s12">
+         <h5 class="white-text">
+           <%= t '.who_title' %>
+         </h5>
 
-           </ul>
-         </div>
+         <p class="grey-text text-lighten-4">
+           <%= t '.who_body' %>
+         </p>
+
+       </div>
+       <div class="col l4 offset-l2 s12">
+         <h5 class="white-text"><%= t '.navigation_title' %></h5>
+         <ul>
+
+           <li>
+             <%= link_to(t('.home_link_text'), root_path,
+                           class: "grey-text text-lighten-4") %>
+           </li>
+           <li>
+             <%= link_to(t('.map_link_text'), map_path,
+                         class: "grey-text text-lighten-4") %>
+           </li>
+           <li>
+             <%= link_to(t('.rights_link_text'),
+                         rights_path, class: "grey-text text-lighten-4") %>
+           </li>
+
+         </ul>
        </div>
      </div>
-     <div class="footer-copyright">
-       <div class="container">
-       © 2017 SanctuaryApp
-       </div>
+   </div>
+   <div class="footer-copyright">
+     <div class="container">
+       <%= t '.copyright_tag' %>
      </div>
-   </footer>
+   </div>
+</footer>

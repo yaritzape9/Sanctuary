@@ -3,21 +3,50 @@
     <ul id="nav-mobile" class="left">
 
     <% if current_user %>
-      <li class="panic-button red"><%= link_to "Alert!", alert_path, method: "POST"%></li>
-      <li><%= link_to "Welcome #{current_user.username}", user_path(current_user)%></li>
+
+      <li class="panic-button red">
+        <%= link_to(t('.alert_link_text'), alert_path,
+                    method: "POST") %>
+      </li>
+      <li>
+        <%= link_to((t(".welcome") + ' ' +
+                    current_user.username), user_path(current_user)) %>
+      </li>
+
     <% end %>
 
-      <li><%= link_to "Home", root_path%></li>
-      <li><%= link_to "Map", map_path%></li>
-      <li><%= link_to "Your Rights", rights_path%></li>
+      <li>
+        <%= link_to(t('.home_link_text'), root_path,
+                      class: "grey-text text-lighten-4") %>
+      </li>
+      <li>
+        <%= link_to(t('.map_link_text'), map_path,
+                      class: "grey-text text-lighten-4") %>
+      </li>
+      <li>
+        <%= link_to(t('.rights_link_text'), rights_path,
+                      class: "grey-text text-lighten-4") %>
+      </li>
+
     <% if !current_user %>
-      <li><%= link_to "Sign up", new_user_path%></li>
-      <li><%= link_to "Log-In", login_path%></li>
+
+      <li>
+        <%= link_to(t('.signup_link_text'), new_user_path,
+                      class: "grey-text text-lighten-4") %>
+      </li>
+      <li>
+        <%= link_to(t('.login_link_text'), login_path,
+                      class: "grey-text text-lighten-4") %>
+      </li>
+
     <% else%>
-      <li><%= link_to "Log Out", logout_path%></li>
+
+      <li>
+        <%= link_to(t('.logout_link_text'), logout_path,
+                      class: "grey-text text-lighten-4") %>
+      </li>
+
     <% end %>
-
-
     </ul>
   </div>
 </nav>
