@@ -38,6 +38,11 @@ en:
         mission_label: 'Mission'
         mission_text:  ''
     layouts:
+      footer:
+        who_title: 'Who We Are'
+        who_body:  'We are a team that includes black, Latina, Vietnamese, and
+        trans women—some of us the daughters of immigrants. We are dedicated to
+        making an impact on the tech scene by giving back to our community.'
         nav:
           home_link:   'Home'
           logout_link: 'Log Out'
@@ -51,4 +56,3 @@ en:
         time_label:    'When'
     sessions:
       new:
-        
