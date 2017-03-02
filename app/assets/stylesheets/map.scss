@@ -19,7 +19,7 @@
 }
 
 .locate-container {
-  padding: 0 25% 5%;
+  padding-left: 40%;
 }
 
 .title {
@@ -38,8 +38,21 @@
   display: inline;
   margin: 5%;
 }
+.search-container {
+  padding-top: 2%;
+}
 
-// .search-container {
-//   border-style: solid;
-//   border-width: thin;
-// }
+// VERY HACKEY
+.material-icons{
+  display: inline;
+  float:left;
+  margin-bottom: -50px;
+  margin-left: -25px;
+}
+#address{
+  margin-top: -10px;
+}
+
+.directions-li {
+  padding-left: 5%;
+}
