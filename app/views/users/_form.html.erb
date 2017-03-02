@@ -1,16 +1,16 @@
 <div class="reg-login-form">
   <%= form_for(@user) do |f| %>
-     <%= f.label "Username" %><br>
+     <%= f.label :username %><br>
      <%= f.text_field :username %><br>
-     <%= f.label "Email" %><br>
+     <%= f.label :email %><br>
      <%= f.text_field :email %><br>
-     <%= f.label "Password" %><br>
+     <%= f.label :password %><br>
      <%= f.password_field :password %><br>
-     <%= f.label "Confirm password" %><br>
+     <%= f.label t('.confirm_password_label') %><br>
      <%= f.password_field :password_confirmation %><br>
      <br>
      <div class="waves-effect waves-light btn">
        <%= f.submit "Create Account"%>
      </div>
-   <% end %>
+  <% end %>
 </div>
