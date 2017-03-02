@@ -1,20 +1,28 @@
 <div class="container">
 
-  <h5>Welcome to your contacts page!</h5>
+  <h5><%= t '.title' %></h5>
   <br>
-  <blockquote><p><b>You will only be able to create a message once!</b> Make sure that you draft a clear message before saving it to your account.</p></blockquote>
+  <blockquote>
+    <p>
+      <b><%= t '.only_once' %></b> <%= t '.make_sure' %>
+    </p>
+  </blockquote>
   <br>
-    <%= render 'users/messageform' %>
+  <%= render 'users/messageform' %>
+  <br>
+  <% if @user.alert_msg %>
+    <%= t '.your_message' %>
     <br>
-    <% if @user.alert_msg %>
-      Your message:<br>
-      <%= @user.alert_msg %>
-    <% end %>
-    <br>
-    <h5>Your Emergency Contacts</h5>
-      <p>Please enter names and phone numbers for up to 5 emergency contacts.<br>
-        If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.<br>
-        Once clicked, any contacts entered on your list of contats will be notified with your entry.</p>
+    <%= @user.alert_msg %>
+  <% end %>
+  <br>
+  <h5><%= t '.your_contacts' %></h5>
+    <p><%= t '.up_to_five' %>
+      <br>
+      <%= t '.if_targeted' %>
+      <br>
+      <%= t '.once_clicked' %>
+    </p>
   <br>
   <br>
     <% @user.contacts.each do |c|%>
@@ -22,5 +30,5 @@
 
     <% end %>
     <br>
-    <%= link_to "Add Contact", new_contact_path, class: "waves-effect waves-light btn"%>
+    <%= link_to t('.add_contact'), new_contact_path, class: "waves-effect waves-light btn"%>
 </div>

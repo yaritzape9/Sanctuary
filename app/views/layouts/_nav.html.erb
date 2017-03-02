@@ -45,12 +45,17 @@
         <%= link_to(t('.logout_link_text'), logout_path,
                       class: "grey-text text-lighten-4") %>
       </li>
-      
+
     <% end %>
     </ul>
-    <li id="language"><a class="dropdown-button" href="#!" data-activates="dropdown1">Select Language<i class="material-icons right">arrow_drop_down</i></a></li>
-      <ul id='dropdown1' class='dropdown-content'>
-        <li class="drop"><a href="#!">English</a></li>
-        <li class="drop"><a href="#!">Español</a></li>
-      </ul>
+    <li id="language">
+      <a class="dropdown-button" href="#!" data-activates="dropdown1">
+        <%= t '.language_select' %>
+        <i class="material-icons right">arrow_drop_down</i>
+      </a>
+    </li>
+    <ul id='dropdown1' class='dropdown-content'>
+      <li class="drop"><a href="#!"><%= t '.english' %></a></li>
+      <li class="drop"><a href="#!"><%= t '.spanish' %></a></li>
+    </ul>
   </div>
