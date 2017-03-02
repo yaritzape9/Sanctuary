@@ -71,13 +71,10 @@ en:
   pins:
     index:
       title:             'Reported ICE Sightings'
-      instruction_title: 'How to report an ICE raid'
-      instruction_1:     '1. Hit the LOCATE ME button to adjust the map.'
+      instruction_title: 'Report a raid by:'
+      instruction_1:     'Searching with an address'
       locate_me_label:   'Locate Me'
-      instruction_2:     '2. Report by:'
-      instruction_2a:    'a. Typing in an address, intersection, or landmark. Hit enter to search and a pop-up to report the raid will appear.'
-      or:                'or'
-      instruction_2b:    'b. click on the map below and a pop-up to report the raid will appear'
+      instruction_2:     'Clicking on the map'
       placeholder:       'Search by Address or Place Name...'
   sessions:
     new:
