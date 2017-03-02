@@ -1,5 +1,5 @@
 <% if @user.alert_msg == nil %>
-  <div class="reg-login-form">
+  <div>
     <%= form_for (@user) do |f|%>
       <%= f.label :Message  %>
       <%=f.text_field :alert_msg  %>
