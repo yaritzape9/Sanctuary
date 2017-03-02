@@ -1,0 +1,11 @@
+<div>
+<%= form_for(@contact) do |f| %>
+ <%= f.label "Contact Nickname" %>
+ <%= f.text_field :nickname %>
+ <%= f.label "Phone Number (Format: 555-555-5555)" %>
+ <%= f.text_field :phone_num %>
+<div class="waves-effect waves-light btn">
+ <%= f.submit %>
+</div>
+ <% end %>
+</div>
