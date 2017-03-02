@@ -20,8 +20,11 @@
       <% end %>
     </div>
     <div class="col s9">
-      <input class="search" id="address" name="address" placeholder="Search by Address or Place Name...">
-      <%= render 'pins/map' %>
+      <div class="search-container">
+        <i class="material-icons">search</i>
+        <input id="address" name="address" placeholder="Search by Address or Place Name..."/>
+      </div>
+        <%= render 'pins/map' %>
     </div>
   </div>
 </div>
