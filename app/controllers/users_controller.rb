@@ -18,11 +18,11 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @contact = Contact.new()
   end
 
   def edit
-      
+
   end
 
   def update
