@@ -10,18 +10,21 @@
       <li class="indent-2">or</li>
       <li class="indent">b. click on the map below and a pop-up to report the raid will appear</li>
     </ul>
-
+  </div>
     <div id="_form" class="hidden">
       <%= form_tag pins_path, method: :post, id: 'new_pin_form', remote: true do |f| %>
-        <%= hidden_field_tag 'pin[latitude]', '' %>
-        <%= hidden_field_tag 'pin[longitude]', '' %>
-        <%= hidden_field_tag 'pin[address]', '' %>
-        <%= submit_tag 'Create Report', :class => "btn", :id => 'save_pin_button'%>
+      <%= hidden_field_tag 'pin[latitude]', '' %>
+      <%= hidden_field_tag 'pin[longitude]', '' %>
+      <%= hidden_field_tag 'pin[address]', '' %>
+      <%= submit_tag 'Create Report', :class => "btn", :id => 'save_pin_button'%>
       <% end %>
     </div>
-    <input id="address" name="address" placeholder="Search by Address or Place Name...">
-  </div>
-  <div class="col s9">
-    <%= render 'pins/map' %>
+    <div class="col s9">
+      <div class="search-container">
+        <i class="material-icons">search</i>
+        <input id="address" name="address" placeholder="Search by Address or Place Name..."/>
+      </div>
+        <%= render 'pins/map' %>
+    </div>
   </div>
 </div>
