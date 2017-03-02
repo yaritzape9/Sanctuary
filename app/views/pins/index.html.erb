@@ -3,10 +3,11 @@
   <div class="locate-container row col s3">
     <h5 class="title">Report a raid by:</h5>
     <ul>
-      <li>1. Searching with an address</li>
-      <li>2. Clicking on a map</li>
+      <p class="directions-li"><i class="material-icons">search</i> Searching with an address</p>
+      <p class="directions-li">
+        <i class="material-icons">room</i> Clicking on a map</ps>
     </ul>
-    <button class="btn locate-button">Locate Me</button>
+    <button class="btn locate-button"><i class="material-icons">my_location</i> Locate Me</button>
   </div>
     <div id="_form" class="hidden">
       <%= form_tag pins_path, method: :post, id: 'new_pin_form', remote: true do |f| %>
@@ -19,13 +20,10 @@
 
     <div class="col s9">
       <div class="search-container">
-
         <i class="material-icons">search</i>
         <input id="address" name="address" placeholder="Search by Address or Place Name..."/>
-
       </div>
         <%= render 'pins/map' %>
     </div>
-
   </div>
 </div>
