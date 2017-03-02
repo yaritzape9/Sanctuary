@@ -1,4 +1,4 @@
-<h4>Please Sign-up</h4>
+<h4><%= t '.title'</h4>
 <br>
 <% if @user.errors.any? %>
   <%= render partial: 'errors', locals: {errors: @user.errors.full_messages} %>
