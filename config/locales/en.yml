@@ -68,7 +68,7 @@ en:
         are still working on adding languages and adapting our app to multiple
         technological platforms. If you have suggestions as to how we can
         improve our app, or would like to request a foreign language to be
-        added, please send an email to: ...'
+        added, please send an email to: '
   layouts:
       nav:
         home_link:   'Home'
