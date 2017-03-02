@@ -1,4 +1,3 @@
-<nav>
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="left">
 
@@ -16,8 +15,10 @@
     <% else%>
       <li><%= link_to "Log Out", logout_path%></li>
     <% end %>
-
-
     </ul>
+    <li id="language"><a class="dropdown-button" href="#!" data-activates="dropdown1">Select Language<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li class="drop"><a href="#!">English</a></li>
+        <li class="drop"><a href="#!">Español</a></li>
+      </ul>
   </div>
-</nav>
