@@ -20,7 +20,10 @@
         Once clicked, any contacts entered on your list of contats will be notified with your entry.</p>
 
     <% @user.contacts.each do |c|%>
-    <div class="contact-display"><img class="phone-img" src="../phone.png"></div> <div class="contact-display"> <%= c.nickname %>: <%= c.phone_num %></div>
+  <p>
+    <div class="contact-display">
+      <i class="tiny material-icons">phone</i> <%= c.nickname %>: <%= c.phone_num %>
+    </div>
     <% end %>
+  </p>
     <%= render 'contacts/new' %>
-</div>
