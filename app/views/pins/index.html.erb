@@ -1,4 +1,4 @@
-<h1 class="title">Reported ICE Sightings</h1>
+<h3 class="title">Reported ICE Sightings</h3>
 <div class="row">
   <div class="locate-container row col s3">
     <h5 class="title">Report a raid by:</h5>
@@ -16,12 +16,16 @@
       <%= submit_tag 'Create Report', :class => "btn", :id => 'save_pin_button'%>
       <% end %>
     </div>
+
     <div class="col s9">
       <div class="search-container">
+
         <i class="material-icons">search</i>
         <input id="address" name="address" placeholder="Search by Address or Place Name..."/>
+
       </div>
         <%= render 'pins/map' %>
     </div>
+
   </div>
 </div>
