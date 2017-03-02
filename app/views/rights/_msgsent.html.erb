@@ -1,0 +1,15 @@
+<% unless flash.empty? %>
+  <% flash.each do |key,msg| %>
+      <% if msg == "Messages sent."%>
+        <div class="alertRight">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <%= msg %>
+        </div>
+      <% else %>
+        <div class="alertWrong">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          <%= msg %>
+        </div>
+      <% end %>
+  <% end %>
+<% end %>
