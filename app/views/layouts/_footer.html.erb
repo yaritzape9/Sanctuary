@@ -11,7 +11,7 @@
          </p>
        </div>
        <div class="col l4 offset-l2 s12">
-         <h5 class="white-text"><%= t 'views.layouts.footer.navigation_title' %></h5>
+         <h5 class="white-text"><%= t '.navigation_title' %></h5>
          <ul>
 
            <li>
@@ -27,26 +27,10 @@
                          rights_path, class: "grey-text text-lighten-4") %>
            </li>
 
-         </div>
-     <div class="col l4 offset-l2 s12">
-       <h5 class="white-text"><%= t '.navigation_title' %></h5>
-       <ul>
-
-         <li>
-           <%= link_to(t('.home_link_text'), root_path,
-                         class: "grey-text text-lighten-4") %>
-         </li>
-         <li>
-           <%= link_to(t('.map_link_text'), map_path,
-                       class: "grey-text text-lighten-4") %>
-         </li>
-         <li>
-           <%= link_to(t('.rights_link_text'),
-                       rights_path, class: "grey-text text-lighten-4") %>
-         </li>
-
-       </ul>
+         </ul>
+       </div>
      </div>
+   </div>
    <div class="footer-copyright">
      <div class="container">
        <%= t '.copyright_tag' %>
