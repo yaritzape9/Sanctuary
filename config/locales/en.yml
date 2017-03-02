@@ -36,10 +36,10 @@ en:
   index:
     index:
       photo_by: "Photo by:"
-      slide_1_tagline: "Empowering America’s immigrant community."
       slide_1_title: Sanctuary
-      slide_2_tagline: "Protect yourself"
-      slide_2_title: "You have rights!"
+      slide_1_tagline: "Empowering America’s immigrant community."
+      slide_2_title: "Know Your Rights"
+      slide_2_tagline: "Important information at your fingertips."
     mission:
       mission_label: "Our Mission"
       mission_paragraph_1: "At Sanctuary, we believe that everyone has the right to be informed about what is happening in their community. For families across America, Immigration and Customs Enforcement(ICE) and the threat of deportation, is a huge source of fear and anxiety. Navigating everyday life with that constant fear is debilitating. Sanctuary seeks to alleviate some of this fear while providing the immigrant community with ways to protect itself."
