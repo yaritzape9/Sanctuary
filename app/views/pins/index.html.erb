@@ -1,15 +1,13 @@
-<h1 class="title">Reported ICE Sightings</h1>
+<h3 class="title">Reported ICE Sightings</h3>
 <div class="row">
   <div class="locate-container row col s3">
-    <h5 class="title">How to report an ICE raid</h5>
+    <h5 class="title">Report a raid by:</h5>
     <ul>
-      <li>1. Hit the LOCATE ME button to adjust the map.</li>
-      <button class="btn locate-button">Locate Me</button>
-      <li>2. Report by:</li>
-      <li class="indent">a. Typing in an address, intersection, or landmark. Hit enter to search and a pop-up to report the raid will appear.</li>
-      <li class="indent-2">or</li>
-      <li class="indent">b. click on the map below and a pop-up to report the raid will appear</li>
+      <p class="directions-li"><i class="material-icons">search</i> Searching with an address</p>
+      <p class="directions-li">
+        <i class="material-icons">room</i> Clicking on the map</ps>
     </ul>
+    <button class="btn locate-button"><i class="material-icons">my_location</i> Locate Me</button>
   </div>
     <div id="_form" class="hidden">
       <%= form_tag pins_path, method: :post, id: 'new_pin_form', remote: true do |f| %>
@@ -19,6 +17,7 @@
       <%= submit_tag 'Create Report', :class => "btn", :id => 'save_pin_button'%>
       <% end %>
     </div>
+
     <div class="col s9">
       <div class="search-container">
         <i class="material-icons">search</i>
