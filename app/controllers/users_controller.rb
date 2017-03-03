@@ -38,11 +38,21 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def set_language
+    if current_user
+      current_user.update(lang_pref: params[:lang_pref])
+    else
+      cookies[:lang_pref] = params[:lang_pref].to_sym
+    end
+
+    redirect_to root_path
+  end
+
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation,:alert_msg)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :alert_msg)
   end
 
   def find_user
