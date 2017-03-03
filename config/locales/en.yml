@@ -78,3 +78,6 @@ en:
     new:
       title: 'Log In'
       submit_tag_label: 'Register'
+  users:
+    new:
+      title: 'Sign up'
