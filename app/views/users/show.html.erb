@@ -9,13 +9,13 @@
       <b>You will only be able to create a message once!</b><br>
       Make sure that you draft a clear message before saving it to your account.</p>
   </blockquote>
-  <br>
     <%= render 'users/messageform' %>
-    <br>
-    <% if @user.alert_msg %>
-      Your message:<br>
-      <%= @user.alert_msg %>
-    <% end %>
+    <div class="user-msg">
+      <% if @user.alert_msg %>
+        <b>Your message:</b><br>
+        <%= @user.alert_msg %>
+      <% end %>
+    </div>
 
     <h5><i class="material-icons">contacts</i> Your Emergency Contacts</h5>
       <p>Please enter names and phone numbers for up to 5 emergency contacts.<br>
