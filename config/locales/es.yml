@@ -4,14 +4,15 @@ es:
     attributes:
       contact:
         nickname:  'Apodo'
-        phone_num: 'número_de_teléfono'
+        phone_num: 'Número De Teléfono'
       user:
-        email: 'correo electrónico'
-        password: 'contraseña'
-        username: 'Nombre de usuario'
+        email: 'Correo Electrónico'
+        password: 'Contraseña'
+        username: 'Nombre De Usuario'
+        password_confirmation: 'Confirmar Contraseña'
     contacts:
       edit:
-        form_title: 'Editar tus contactos'
+        form_title: 'Editar Tus Contactos'
   index:
     index:
       photo_by: 'Foto cortesia de:'
@@ -86,13 +87,15 @@ es:
       instruction19: 'No firme ningún documento antes de hablar con un abogado.'
   sessions:
     new:
+      username: 'Nombre De Usuario'
+      password: 'Contraseña'
       title:            'Por favor Iniciar sesión'
       submit_tag_label: 'Iniciar sesión'
   users:
     form:
-      confirm_password_label: 'Confirmar contraseña'
+      signup_link_text: 'Regístre'
     new:
-      title: 'Por Favor regístrese'
+      title: 'Por Favor Regístrese'
     show:
       title:         'Bienvenido a su página de perfil.'
       only_once:     '¡Solo podrás crear un mensaje una vez!'
