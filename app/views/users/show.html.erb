@@ -9,12 +9,14 @@
       <b><%=t '.make_sure'%></b><br>
       <%=t '.only_once'%></p>
   </blockquote>
-  <br>
+  
     <%= render 'users/messageform' %>
-    <br>
+  
+    <div class="user-msg">
     <% if @user.alert_msg %>
-      <u><%= t '.your_message'%>: <%= @user.alert_msg %></u>
+      <b><%= t '.your_message'%>:</b><br> <%= @user.alert_msg %>
     <% end %>
+    </div>
 
     <h5><i class="material-icons">contacts</i> <%=t '.your_contacts'%></h5>
       <p><%= t '.up_to_five' %><br>

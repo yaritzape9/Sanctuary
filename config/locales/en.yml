@@ -105,7 +105,7 @@ en:
   sessions:
     new:
       title: 'Log In'
-      submit_tag_label: 'Register'
+      submit_tag_label: 'Log In'
   users:
     new:
       title: 'Sign up'
