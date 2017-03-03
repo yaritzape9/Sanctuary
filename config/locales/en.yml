@@ -104,6 +104,8 @@ en:
       instruction19: 'Do not sign any papers prior to speaking with a lawyer.'
   sessions:
     new:
+      username: 'Username'
+      password: 'Password'
       title: 'Log In'
       submit_tag_label: 'Log In'
   users:
@@ -125,7 +127,7 @@ en:
       add_contact: 'Agregar Contacto'
     messageform:
       message: 'Message (160 character limit)'
-      create_msg: 'Save Message' 
+      create_msg: 'Save Message'
   contacts:
     new:
       add_contact: 'Add Contacts'
