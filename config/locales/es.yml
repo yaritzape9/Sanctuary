@@ -43,7 +43,7 @@ es:
       map_link_text:     'Mapa'
       rights_link_text:  'Tus derechos'
       signup_link_text:  'Regístrate'
-      welcome_link_text: 'Bienvenido'
+      welcome_link_text: 'Perfil'
       language_select:   'Seleccione El Idioma'
       english:           'Inglés'
       spanish:           'Español'

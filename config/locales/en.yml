@@ -65,7 +65,7 @@ en:
       map_link_text: 'Map'
       rights_link_text: 'Your Rights'
       signup_link_text: 'Sign Up'
-      welcome_link_text: 'Welcome'
+      welcome_link_text: 'Profile'
   pins:
     index:
       title:             'Reported ICE Sightings'
