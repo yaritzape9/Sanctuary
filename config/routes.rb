@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#delete', as: 'logout'
 
+  post '/languages', to: 'users#set_language', as: 'languages'
+
   get '/map', to: 'pins#index'
   post '/map', to: 'pins#create'
 
