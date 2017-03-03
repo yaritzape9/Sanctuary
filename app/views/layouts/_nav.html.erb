@@ -8,8 +8,7 @@
                     method: "POST") %>
       </li>
       <li>
-        <%= link_to((t(".welcome") + ' ' +
-                    current_user.username), user_path(current_user)) %>
+        <%= link_to(current_user.username + ' ' + t('.welcome_link_text'), user_path(current_user))  %>
       </li>
 
     <% end %>
