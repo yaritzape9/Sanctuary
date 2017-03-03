@@ -105,6 +105,9 @@ es:
       if_targeted:   'Si usted es apuntado por ICE en su hogar, clic el rojo "¡Alerta!" En la esquina superior izquierda de la barra de navegación.'
       once_clicked:  'Una vez haz hecho clic, cualquier contacto ingresado en su lista de contats será notificado con su entrada.'
       add_contact:   'Agregar Contacto'
+    messageform:
+      message: 'Mensaje (160 Límite de caracteres)'
+      create_msg: 'Crear un Mensaje'
   contacts:
     new:
-      add_contact: 'Agregar Contacto'
+      add_contact: 'Guardar Contacto'
