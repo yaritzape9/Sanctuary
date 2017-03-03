@@ -21,9 +21,10 @@ class TwilioController < ApplicationController
     end
 
   redirect_to rights_path
-end
-private
+  
+  end
 
+  private
   def send_message(number, alert)
     twilio_number = ENV['TWILIO_NUMBER']
     p twilio_number
