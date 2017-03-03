@@ -48,6 +48,7 @@
 
     <% end %>
     </ul>
+
     <li id="language">
       <a class="dropdown-button" href="#!" data-activates="dropdown1">
         <%= t '.language_select' %>
@@ -55,7 +56,15 @@
       </a>
     </li>
     <ul id='dropdown1' class='dropdown-content'>
-      <li class="drop"><a href="#!"><%= t '.english' %></a></li>
-      <li class="drop"><a href="#!"><%= t '.spanish' %></a></li>
+      <li class="drop">
+        <%= link_to t('.english'), languages_path(lang_pref: 'en'), method: :post %>
+        <!-- <a href="/languages" class="lang-pref-opt"><%= t '.english' %></a> -->
+      </li>
+
+      <li class="drop">
+        <%= link_to t('.spanish'), languages_path(lang_pref: 'es'), method: :post %>
+        <!-- <a href="/languages" class="lang-pref-opt"><%= t '.spanish' %></a> -->
+      </li>
     </ul>
+
   </div>
