@@ -109,6 +109,8 @@ en:
   users:
     new:
       title: 'Sign up'
+    form:
+      signup_link_text: 'Sign Up'
     show:
       title: 'Welcome to your profile page.'
       only_once: 'You will only be able to create a message once!'
@@ -121,3 +123,9 @@ en:
       if_targeted:   'If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.'
       once_clicked:  'Once clicked, any contacts entered on your list of contats will be notified with your entry.'
       add_contact: 'Agregar Contacto'
+    messageform:
+      message: 'Message (160 character limit)'
+      create_msg: 'Save Message' 
+  contacts:
+    new:
+      add_contact: 'Add Contacts'
