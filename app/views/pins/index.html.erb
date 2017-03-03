@@ -1,16 +1,17 @@
-<h1 class="title"><%= t '.title' %></h1>
+<h3 class="title"><%= t '.title' %></h3>
 
 <div class="row">
 
   <div class="locate-container row col s3">
     <h5 class="title"><%= t '.instruction_title' %></h5>
     <ul>
-      <li><%= t '.instruction_1' %></li>
-      <button class="btn locate-button"><%= t '.locate_me_label' %></button>
-      <li><%= t '.instruction_2' %></li>
-      <li class="indent"><%= t '.instruction_2a' %></li>
-      <li class="indent-2"><%= t '.or' %></li>
-      <li class="indent"><%= t '.instruction_2b' %></li>
+      <p class="directions-li">
+        <i class="material-icons">search</i> <%= t '.instruction_1' %>
+      </p>
+      <p class="directions-li">
+        <i class="material-icons">room</i> <%= t '.instruction_2' %>
+      </p>
+      <button class="btn locate-button"><i class="material-icons">my_location</i> <%= t '.locate_me_label' %></button>
     </ul>
   </div>
 
