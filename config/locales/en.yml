@@ -27,9 +27,10 @@ en:
         nickname: 'Nickname'
         phone_num: 'Phone Number'
       user:
-        email: 'Email'
-        password: 'Password'
-        username: 'Username'
+        email:                 'Email'
+        password:              'Password'
+        username:              'Username'
+        password_confirmation: 'Confirm Password'
     contacts:
       edit:
         form_title: 'Edit your contacts'
@@ -75,5 +76,5 @@ en:
       placeholder:       'Search by Address or Place Name...'
   sessions:
     new:
-      title: 'Sign Up'
+      title: 'Log In'
       submit_tag_label: 'Register'
