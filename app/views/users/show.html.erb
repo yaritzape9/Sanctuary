@@ -13,8 +13,7 @@
     <%= render 'users/messageform' %>
     <br>
     <% if @user.alert_msg %>
-      <%= t '.your_message'%>:<br>
-      <%= @user.alert_msg %>
+      <u><%= t '.your_message'%>: <%= @user.alert_msg %></u>
     <% end %>
 
     <h5><i class="material-icons">contacts</i> <%=t '.your_contacts'%></h5>
@@ -28,5 +27,12 @@
       <%= c.nickname %>: <%= c.phone_num %>
     </p>
     <% end %>
-    <%= render 'contacts/new' %>
+
+    <% if @user.contacts.length <= 4  %>
+      <%= render 'contacts/new' %>
+    <% end %>
+
+    <% if @user.contacts.length == 5 %>
+      <b><p style="color: red;"><%="You cannot add more than 5 contacts."%></p></b>
+    <% end %>
 </div>
