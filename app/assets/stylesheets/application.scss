@@ -33,6 +33,17 @@ main {
   background-color: #C22A20;
 }
 
+.btn:focus {
+  background-color: #9fa8da;
+}
+
+#language {
+  float:right !important;
+  list-style-type: none !important;
+  padding-right: 3%;
+}
+
+
 .waves-effect {
      /* The alpha value allows the text and background color
      of the button to still show through. */
@@ -65,4 +76,14 @@ main {
 }
 .main-container {
   padding-bottom: 10%;
+}
+
+.slide-caption {
+  color: white;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+  letter-spacing: -1px;
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, .3);
+  padding: 10px;
+  width: 100%;
 }
