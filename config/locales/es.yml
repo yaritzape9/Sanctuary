@@ -1,0 +1,76 @@
+---
+es:
+  activerecord:
+    attributes:
+      contact:
+        nickname:  'Apodo'
+        phone_num: 'número_de_teléfono'
+      user:
+        email: 'correo electrónico'
+        password: 'contraseña'
+        username: 'Nombre de usuario'
+    contacts:
+      edit:
+        form_title: 'Editar tus contactos'
+  index:
+    index:
+      photo_by: "Foto por:"
+      slide_1_title: "Santuario"
+      slide_1_tagline: "Potenciar la comunidad de inmigrantes de los Estados Unidos."
+      slide_2_title: "Conozca sus derechos"
+      slide_2_tagline: "Información importante al alcance de su mano."
+    mission:
+      mission_label: 'Misión'
+      mission_paragraph_1: "En Sanctuary, creemos que todos tienen el derecho de ser informados sobre lo que está sucediendo en su comunidad. Para las familias en todo Estados Unidos, la Agencia de Inmigración y Aduanas (ICE, por sus siglas en inglés) y la amenaza de deportación, es una fuente enorme de miedo y ansiedad. Navegar la vida cotidiana con ese miedo constante es debilitante. Sanctuary busca aliviar parte de este temor mientras provee a la comunidad inmigrante de formas de protegerse."
+      mission_paragraph_2: "Nuestro rastreador de mapas permite a los usuarios ver dónde han ocurrido incursiones en sus vecindarios. Hemos construido la votación en nuestro rastreador para evitar que la información falsa se propague, sumándose a las tensiones de navegar por América como inmigrante."
+      mission_paragraph_3: 'La página "Conozca sus derechos" ofrece a los usuarios información vital sobre cómo navegar una interacción con ICE. Ser apuntado por ICE es aterrador, pero hay leyes puestas en el lugar para ofrecerle algunas protecciones. Familiarícese con sus derechos.'
+      mission_paragraph_4: "La función de botón de pánico de Sanctuary le permite notificar rápidamente a familiares y amigos si está involucrado en una incursión de ICE. Con el clic de un botón, puede ponerse en contacto hasta cinco personas con un mensaje preescrito, lo que le permite centrarse en interactuar con los oficiales y recordar a abogar por sus derechos."
+      mission_paragraph_5: "La accesibilidad es muy importante para nosotros. Queremos ofrecer nuestros servicios a todo el mundo, y eso significa tener nuestra aplicación disponible por computadora, teléfono inteligente y teléfono celular sin capacidades de smartphone, además de tener varios idiomas para elegir. Seguimos trabajando en la adición de idiomas y en la adaptación de nuestra aplicación a múltiples plataformas tecnológicas. Si tiene sugerencias sobre cómo podemos mejorar nuestra aplicación, o si desea solicitar un idioma extranjero, por favor envíe un correo electrónico a:"
+  layouts:
+    footer:
+      copyright_tag:    '© 2017 SanctuaryApp'
+      home_link_text:   'Inicio'
+      map_link_text:    'Mapa'
+      navigation_title: 'Navegación'
+      rights_link_text: 'Tus derechos'
+      who_body:         'Somos un equipo que incluye mujeres negras, latinas, vietnamitas y trans, algunas de las cuales somos hijas de inmigrantes. Estamos dedicados a hacer un impacto en la escena tecnológica devolviendo a nuestra comunidad.'
+      who_title:        'Quienes Somos'
+    nav:
+      alert_link_text:   'Alerta!'
+      home_link_text:    'Inicio'
+      login_link_text:   'Iniciar Sesión'
+      logout_link_text:  'Cerrar Sesión'
+      map_link_text:     'Mapa'
+      rights_link_text:  'Tus derechos'
+      signup_link_text:  'Regístrate'
+      welcome_link_text: 'Bienvenido'
+      language_select:   'Seleccione El Idioma'
+      english:           'Inglés'
+      spanish:           'Español'
+  pins:
+    index:
+      title:             'Reported ICE Sightings'
+      instruction_title: 'Report a raid by:'
+      instruction_1:     'Searching with an address'
+      locate_me_label:   'Locate Me'
+      instruction_2:     'Clicking on the map'
+      placeholder:       'Search by Address or Place Name...'
+  sessions:
+    new:
+      title:            'Please Login'
+      submit_tag_label: 'Login'
+  users:
+    form:
+      confirm_password_label: 'Confirm password'
+    new:
+      title: 'Please Sign-up'
+    show:
+      title:         'Bienvenido a su página de perfil.'
+      only_once:     'You will only be able to create a message once!'
+      make_sure:     'Make sure that you draft a clear message before saving it to your account.'
+      your_message:  'Your message:'
+      your_contacts: 'Your Emergency Contacts'
+      up_to_five:    'Please enter names and phone numbers for up to 5 emergency contacts.'
+      if_targeted:   'If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.'
+      once_clicked:  'Once clicked, any contacts entered on your list of contats will be notified with your entry.'
+      add_contact:   'Agregar Contacto'

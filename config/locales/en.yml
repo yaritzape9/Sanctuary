@@ -49,52 +49,25 @@ en:
       mission_paragraph_5: "Accessibility is incredibly important to us. We want to offer our services to everyone, and that means having our app available by computer, smartphone, and cellphone without smartphone capabilities, as well as having multiple languages to choose from. We are still working on adding languages and adapting our app to multiple technological platforms. If you have suggestions as to how we can improve our app, or would like to request a foreign language to be added, please send an email to:"
   layouts:
     footer:
-      copyright_tag:    '© 2017 SanctuaryApp'
-      home_link_text:   'Home'
-      map_link_text:    'Map'
-      navigation_title: 'Navigation'
-      rights_link_text: 'Your Rights'
-      who_body:         'We are a team that includes black, Latina, Vietnamese, and trans women—some of us the daughters of immigrants. We are dedicated to making an impact on the tech scene by giving back to our community.'
-      who_title:        'Who We Are'
+      copyright_tag: "© 2017 SanctuaryApp"
+      home_link_text: Home
+      map_link_text: Map
+      navigation_title: Navigation
+      rights_link_text: "Your Rights"
+      who_body: "We are a team that includes black, Latina, Vietnamese, and trans women—some of us the daughters of immigrants. We are dedicated to making an impact on the tech scene by giving back to our community."
+      who_title: "Who We Are"
     nav:
-      alert_link_text:   'Alert!'
-      home_link_text:    'Home'
-      login_link_text:   'Log In'
-      logout_link_text:  'Log Out'
-      map_link_text:     'Map'
-      rights_link_text:  'Your Rights'
-      signup_link_text:  'Sign Up'
-      welcome_link_text: 'Welcome'
-      language_select:   'Select Language'
-      english:           'English'
-      spanish:           'Español'
+      alert_link_text: Alert!
+      home_link_text: Home
+      login_link_text: "Log In"
+      logout_link_text: "Log Out"
+      map_link_text: Map
+      rights_link_text: "Your Rights"
+      signup_link_text: "Sign Up"
+      welcome_link_text: Welcome
   pins:
     index:
-      title:             'Reported ICE Sightings'
-      instruction_title: 'How to report an ICE raid'
-      instruction_1:     '1. Hit the LOCATE ME button to adjust the map.'
-      locate_me_label:   'Locate Me'
-      instruction_2:     '2. Report by:'
-      instruction_2a:    'a. Typing in an address, intersection, or landmark. Hit enter to search and a pop-up to report the raid will appear.'
-      or:                'or'
-      instruction_2b:    'b. click on the map below and a pop-up to report the raid will appear'
-      placeholder:       'Search by Address or Place Name...'
+      location_name: Location
+      time_label: When
   sessions:
-    new:
-      title:            'Please Login'
-      submit_tag_label: 'Login'
-  users:
-    form:
-      confirm_password_label: 'Confirm password'
-    new:
-      title: 'Please Sign-up'
-    show:
-      title:         'Welcome to your contacts page!'
-      only_once:     'You will only be able to create a message once!'
-      make_sure:     'Make sure that you draft a clear message before saving it to your account.'
-      your_message:  'Your message:'
-      your_contacts: 'Your Emergency Contacts'
-      up_to_five:    'Please enter names and phone numbers for up to 5 emergency contacts.'
-      if_targeted:   'If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.'
-      once_clicked:  'Once clicked, any contacts entered on your list of contats will be notified with your entry.'
-      add_contact:   'Add Contact'
+    new: ~
