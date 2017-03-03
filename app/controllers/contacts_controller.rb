@@ -14,11 +14,10 @@ class ContactsController < ApplicationController
     if @contact.user.contacts.length > 5
       redirect_to user_path(@user)
       flash[:alert] = "You are allowed 5 contacts."
-      if @contact.save
+    elsif @contact.save
         redirect_to user_path(@contact.user)
-      else
+    else
         flash[:alert] = "Unable to save."
-      end
     end
   end
 
