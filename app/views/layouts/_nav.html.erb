@@ -1,12 +1,14 @@
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="left">
 
-    <% if current_user %>
+    <%= current_user %>
+    <% if user_signed_in? %>
 
       <li class="panic-button red">
         <%= link_to(t('.alert_link_text'), alert_path,
                     method: "POST") %>
       </li>
+
       <li>
         <%= link_to((t(".welcome") + ' ' +
                     current_user.username), user_path(current_user)) %>
@@ -27,14 +29,14 @@
                       class: "grey-text text-lighten-4") %>
       </li>
 
-    <% if !current_user %>
+    <% if !user_signed_in? %>
 
       <li>
-        <%= link_to(t('.signup_link_text'), new_user_path,
+        <%= link_to(t('.signup_link_text'), new_user_registration_path,
                       class: "grey-text text-lighten-4") %>
       </li>
       <li>
-        <%= link_to(t('.login_link_text'), login_path,
+        <%= link_to(t('.login_link_text'), new_user_session_path,
                       class: "grey-text text-lighten-4") %>
       </li>
 
@@ -42,8 +44,8 @@
 
 
       <li>
-        <%= link_to(t('.logout_link_text'), logout_path,
-                      class: "grey-text text-lighten-4") %>
+        <%= link_to(t('.logout_link_text'), destroy_user_session_path,
+                      :method => :delete, class: "grey-text text-lighten-4") %>
       </li>
 
     <% end %>

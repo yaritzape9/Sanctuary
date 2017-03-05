@@ -15,8 +15,12 @@
         <%= render 'layouts/nav' %>
     </nav>
     <main class="main-container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </main>
       <footer>

@@ -9,16 +9,15 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     @contact.user = current_user
-    @user = current_user.id
+    @user = current_user
 
     if @contact.user.contacts.length > 5
       redirect_to user_path(@user)
       flash[:alert] = "You are allowed 5 contacts."
-      if @contact.save
-        redirect_to user_path(@contact.user)
-      else
-        flash[:alert] = "Unable to save."
-      end
+    elsif @contact.save
+      redirect_to user_path(@contact.user)
+    else
+      flash[:alert] = "Unable to save."
     end
   end
 
