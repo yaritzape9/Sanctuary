@@ -1,9 +1,9 @@
 <% if @user.alert_msg == nil %>
   <div>
     <%= form_for (@user) do |f|%>
-      <%= f.label "Message (160 character limit)"  %>
+      <%= f.label t('.message')  %>
       <%=f.text_field :alert_msg, :maxlength => "160" %>
-      <div class="waves-effect waves-light btn"><%= f.submit "Create Message"%></div>
+      <div class="waves-effect waves-light btn"><%= f.submit t('.create_msg')%></div>
     <% end %>
   </div>
 <% end %>

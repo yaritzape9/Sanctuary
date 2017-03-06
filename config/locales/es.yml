@@ -4,28 +4,29 @@ es:
     attributes:
       contact:
         nickname:  'Apodo'
-        phone_num: 'número_de_teléfono'
+        phone_num: 'Número De Teléfono'
       user:
-        email: 'correo electrónico'
-        password: 'contraseña'
-        username: 'Nombre de usuario'
+        email: 'Correo Electrónico'
+        password: 'Contraseña'
+        username: 'Nombre De Usuario'
+        password_confirmation: 'Confirmar Contraseña'
     contacts:
       edit:
-        form_title: 'Editar tus contactos'
+        form_title: 'Editar Tus Contactos'
   index:
     index:
-      photo_by: "Foto por:"
-      slide_1_title: "Santuario"
-      slide_1_tagline: "Potenciar la comunidad de inmigrantes de los Estados Unidos."
-      slide_2_title: "Conozca sus derechos"
-      slide_2_tagline: "Información importante al alcance de su mano."
+      photo_by: 'Foto cortesia de:'
+      slide_1_title: 'Santuario'
+      slide_1_tagline: 'Potenciar la comunidad de inmigrantes de los Estados Unidos.'
+      slide_2_title: 'Conozca sus derechos'
+      slide_2_tagline: 'Información importante al alcance de su mano.'
     mission:
       mission_label: 'Misión'
-      mission_paragraph_1: "En Sanctuary, creemos que todos tienen el derecho de ser informados sobre lo que está sucediendo en su comunidad. Para las familias en todo Estados Unidos, la Agencia de Inmigración y Aduanas (ICE, por sus siglas en inglés) y la amenaza de deportación, es una fuente enorme de miedo y ansiedad. Navegar la vida cotidiana con ese miedo constante es debilitante. Sanctuary busca aliviar parte de este temor mientras provee a la comunidad inmigrante de formas de protegerse."
-      mission_paragraph_2: "Nuestro rastreador de mapas permite a los usuarios ver dónde han ocurrido incursiones en sus vecindarios. Hemos construido la votación en nuestro rastreador para evitar que la información falsa se propague, sumándose a las tensiones de navegar por América como inmigrante."
+      mission_paragraph_1: 'En Santuario, creemos que todos tienen el derecho de ser informados sobre lo que está sucediendo en su comunidad. Para las familias en todo Estados Unidos, la Agencia de Inmigración y Aduanas (ICE, por sus siglas en inglés) y la amenaza de deportación, es una fuente enorme de miedo y ansiedad. Navegar la vida cotidiana con ese miedo constante es debilitante. Santuario busca aliviar parte de este temor mientras provee a la comunidad inmigrante de formas de protegerse.'
+      mission_paragraph_2: 'Nuestro rastreador de mapas permite a los usuarios ver dónde han ocurrido incursiones en sus vecindarios. Hemos construido la votación en nuestro rastreador para evitar que la información falsa se propague, sumándose a las tensiones de navegar por América como inmigrante.'
       mission_paragraph_3: 'La página "Conozca sus derechos" ofrece a los usuarios información vital sobre cómo navegar una interacción con ICE. Ser apuntado por ICE es aterrador, pero hay leyes puestas en el lugar para ofrecerle algunas protecciones. Familiarícese con sus derechos.'
-      mission_paragraph_4: "La función de botón de pánico de Sanctuary le permite notificar rápidamente a familiares y amigos si está involucrado en una incursión de ICE. Con el clic de un botón, puede ponerse en contacto hasta cinco personas con un mensaje preescrito, lo que le permite centrarse en interactuar con los oficiales y recordar a abogar por sus derechos."
-      mission_paragraph_5: "La accesibilidad es muy importante para nosotros. Queremos ofrecer nuestros servicios a todo el mundo, y eso significa tener nuestra aplicación disponible por computadora, teléfono inteligente y teléfono celular sin capacidades de smartphone, además de tener varios idiomas para elegir. Seguimos trabajando en la adición de idiomas y en la adaptación de nuestra aplicación a múltiples plataformas tecnológicas. Si tiene sugerencias sobre cómo podemos mejorar nuestra aplicación, o si desea solicitar un idioma extranjero, por favor envíe un correo electrónico a:"
+      mission_paragraph_4: 'La función de el botón de pánico, le permite notificar rápidamente a familiares y amigos si está involucrado en una incursión de ICE. Con el clic de un botón, puede ponerse en contacto hasta cinco personas con un mensaje preescrito, lo que le permite centrarse en interactuar con los oficiales y recordar a abogar por sus derechos.'
+      mission_paragraph_5: 'La accesibilidad es muy importante para nosotros. Queremos ofrecer nuestros servicios a todo el mundo, y eso significa tener nuestra aplicación disponible por computadora, teléfono inteligente y teléfono celular sin capacidades de smartphone, además de tener varios idiomas para elegir. Seguimos trabajando en la adición de idiomas y en la adaptación de nuestra aplicación a múltiples plataformas tecnológicas. Si tiene sugerencias sobre cómo podemos mejorar nuestra aplicación, o si desea solicitar un idioma extranjero, por favor envíe un correo electrónico a:'
   layouts:
     footer:
       copyright_tag:    '© 2017 SanctuaryApp'
@@ -43,34 +44,73 @@ es:
       map_link_text:     'Mapa'
       rights_link_text:  'Tus derechos'
       signup_link_text:  'Regístrate'
-      welcome_link_text: 'Bienvenido'
+      welcome_link_text: 'Perfil'
       language_select:   'Seleccione El Idioma'
       english:           'Inglés'
       spanish:           'Español'
   pins:
     index:
-      title:             'Reported ICE Sightings'
-      instruction_title: 'Report a raid by:'
-      instruction_1:     'Searching with an address'
-      locate_me_label:   'Locate Me'
-      instruction_2:     'Clicking on the map'
-      placeholder:       'Search by Address or Place Name...'
+      title:             'Avisos de ICE reportados'
+      instruction_title: 'Reportar una incursión:'
+      instruction_1:     'Búsqueda con una dirección'
+      locate_me_label:   'Ubícame'
+      instruction_2:     'Haciendo clic en el mapa'
+      placeholder:       'Buscar por dirección o lugar ...'
+  rights:
+    index:
+      title: 'Tus derechos'
+      question1: 'Si un oficial llega a su puerta, usted no tiene que abrir la puerta inmediatamente. Mientras la puerta esté cerrada, haga lo siguiente:'
+      ask: 'Pregunte:'
+      instruction1: '¿Son agentes de inmigración o de ICE (Inmigración y Control de Aduanas)?'
+      instruction2: '¿Por qué han venido a mi casa?'
+      instruction3: 'Si los oficiales no hablan su idioma, usted tiene el derecho de pedir un intérprete.'
+      instruction4: 'Si usted abre la puerta para hablar con el oficial,'
+      instruction5: 'ellos no tienen el derecho de entrar a su casa sin su permiso.'
+      question2: 'Si los agentes le piden entrar a su casa:'
+      instruction6: 'Pídales a los oficiales de ICE que le presenten una orden de cateo, firmado por un juez por debajo de la puerta.'
+      instruction7: 'Si no tienen una orden,'
+      instruction8: 'usted no tiene que dejarlos entrar en su hogar.'
+      instruction9: 'Una orden de arresto válida'
+      ask1: ''
+      space: ''
+      instruction10: 'debe ser firmada por un juez de la Corte de Inmigración.'
+      instruction11: 'Una orden emitida por el DHS o ICE sin la firma de un Juez'
+      invalid: 'no es válida'
+      instruction12: 'Busque una firma de un juez en la parte superior del documento.'
+      instruction13: 'Usted no necesita abrir su puerta a los oficiales a menos que ellos le muestren una búsqueda válida o una orden de arresto nombrando a usted o a una persona que vive en su dirección.'
+      instruction14: 'Si ellos no tienen una razón válida para entrar, declare:'
+      instruction15: 'No consiento a su entrada o su registro de este lugar .'
+      question3: 'Si los oficiales entran a su casa sin su permiso, recuerde lo siguiente:'
+      instruction16: 'No te resistas.'
+      instruction17: 'Usted tiene el derecho de declarar que no aceptó su entrada,que ejercer sus derecho a permanecer en silencio, y solicitar un abogado. Cualquier persona en su casa también tiene derecho a permanecer en silencio.'
+      instruction18: 'No muestre documentos falsos (DNI, certificados de nacimiento, etc.) a los oficiales.'
+      instruction19: 'No firme ningún documento antes de hablar con un abogado.'
   sessions:
     new:
-      title:            'Please Login'
-      submit_tag_label: 'Login'
+      username: 'Nombre De Usuario'
+      password: 'Contraseña'
+      title:            'Por favor Iniciar sesión'
+      submit_tag_label: 'Iniciar sesión'
   users:
     form:
-      confirm_password_label: 'Confirm password'
+      signup_link_text: 'Regístre'
     new:
-      title: 'Please Sign-up'
+      title: 'Por Favor Regístrese'
     show:
       title:         'Bienvenido a su página de perfil.'
-      only_once:     'You will only be able to create a message once!'
-      make_sure:     'Make sure that you draft a clear message before saving it to your account.'
-      your_message:  'Your message:'
-      your_contacts: 'Your Emergency Contacts'
-      up_to_five:    'Please enter names and phone numbers for up to 5 emergency contacts.'
-      if_targeted:   'If you are targeted by ICE at your home, hit the red "Alert!" button at the top left-corner of the navigation bar.'
-      once_clicked:  'Once clicked, any contacts entered on your list of contats will be notified with your entry.'
+      only_once:     '¡Solo podrás crear un mensaje una vez!'
+      make_sure:     'Asegúrese de elaborar un mensaje claro antes de guardarlo en su cuenta.'
+      set_contacts: 'Aquí puede establecer su mensaje de emergencia y sus contactos.'
+      your_alert_msg: 'Su mensaje de alerta'
+      your_message:  'Tu mensaje:'
+      your_contacts: 'Sus Contactos de Emergencia'
+      up_to_five:    'Ingrese nombres y números de teléfono para un máximo de 5 contactos de emergencia.'
+      if_targeted:   'Si usted es apuntado por ICE en su hogar, clic el rojo "¡Alerta!" En la esquina superior izquierda de la barra de navegación.'
+      once_clicked:  'Una vez haz hecho clic, cualquier contacto ingresado en su lista de contats será notificado con su entrada.'
       add_contact:   'Agregar Contacto'
+    messageform:
+      message: 'Mensaje (160 Límite de caracteres)'
+      create_msg: 'Crear un Mensaje'
+  contacts:
+    new:
+      add_contact: 'Guardar Contacto'
