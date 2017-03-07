@@ -4,9 +4,11 @@
 
 Web and mobile app that provides communities with tools to protect themselves against ICE (Immigration & Customs Enforcement) Raids. Users can map and track ICE sightings in their communities, and vote on the validity of sightings to promote accurate data. A panic button feature allows users to instantly notify up to 5 contacts via text message if they are being targeted by a raid. Once the panic button has been selected, the app will generate a list of rights the user has in interacting with ICE during the raid. This app will be available in multiple languages.
 
+![](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif)
+
 ##How Sanctuary was built
 
-This was our final project at DevBootcamp. We hit our MVP after 5 days of coding and 1 day of planning. Communication was integral to our team's productivity - and not only did we communicate well, we had fun along the way! As a team, we agreed that this project should push our technical boundaries. Each team member contributed to both front and back-end. 
+This was our final project at DevBootcamp. We hit our MVP after 5 days of coding and 1 day of planning. Communication was integral to our team's productivity - and not only did we communicate well, we had fun along the way! As a team, we agreed that this project should push our technical boundaries. Each team member contributed to both front and back-end.
 
 ##Tech Stack
 * Ruby on Rails
