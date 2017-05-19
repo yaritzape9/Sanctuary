@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   get '/map', to: 'pins#index'
   post '/map', to: 'pins#create'
+  post '/upvote', to: 'pins#new_upvote'
+  post '/downvote', to: 'pins#new_downvote'
+  delete '/upvote', to: 'pins#delete_upvote'
+  delete '/downvote', to: 'pins#delete_downvote'
 
   get '/rights', to: 'rights#index'
 

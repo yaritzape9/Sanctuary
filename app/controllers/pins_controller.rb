@@ -1,19 +1,22 @@
 class PinsController < ApplicationController
 
-  before_action :find_pin, only: [:show, :edit, :update, :destroy]
+  before_action :find_pin, only: []
 
   def index
     @pin = Pin.new
-    @pins = Pin.all
+    pins = Pin.all
+    # p @pins
+    # @pins.each { |pin| p pin }
 
     respond_to do |format|
       format.html
-      format.json { render json: @pins }
-    end
-  end
+      format.json {
 
-  def new
-    @pin = Pin.new
+        @pins = pins.map { |pin| pin.attributes.merge({ "score" => pin.score })}
+        p @pins
+        render json: @pins }
+
+    end
   end
 
   def create
@@ -38,10 +41,32 @@ class PinsController < ApplicationController
     end
   end
 
+  def upvote
+    if current_user
+      pin = Pin.find (vote_params[:pin_id])
+      vote = Vote.new(user_id: current_user.id, pin_id: pin.id, vote_type: 'up')
+
+      if vote.save
+
+        @score = pin.score
+
+        respond_to do |format|
+          format.html
+          format.json { render json: @count, status: :created }
+          format.js
+        end
+      end
+    end
+  end
+
   private
 
   def pin_params
     params.require(:pin).permit(:latitude, :longitude, :address)
+  end
+
+  def vote_params
+    params.require(:vote).permit(:pin_id)
   end
 
   def find_pin
