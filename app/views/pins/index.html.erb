@@ -15,13 +15,58 @@
     </ul>
   </div>
 
-  <div id="_form" class="hidden">
-    <%= form_tag pins_path, method: :post, id: 'new_pin_form', remote: true do |f| %>
-    <%= hidden_field_tag 'pin[latitude]', '' %>
-    <%= hidden_field_tag 'pin[longitude]', '' %>
-    <%= hidden_field_tag 'pin[address]', '' %>
-    <%= submit_tag 'Create Report', :class => "btn", :id => 'save_pin_button'%>
-    <% end %>
+  <div id="new-pin-infowindow" class="hidden">
+    <span id="ask-if-report">Report raid at or near</span>
+    <br><br>
+    <span id="address"></span><span id="question-mark">?</span>
+    <br><br>
+    <div id="blank-form">
+      <%= form_tag pins_path, method: :post, remote: true do |f| %>
+      <%= hidden_field_tag 'pin[latitude]', '' %>
+      <%= hidden_field_tag 'pin[longitude]', '' %>
+      <%= hidden_field_tag 'pin[address]', '' %>
+      <%= submit_tag 'Create Report', :class => "btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="existing-pin-info hidden">
+    <table>
+      <tr>
+        <td>
+          <div class="vote-panel">
+
+            <form class="pin-upvote-form"
+                  action="/upvote"
+                  method="post"
+                  class="up-vote">
+
+              <input class='pin-id-input' type="hidden" name="pin_id" value="">
+              <button type="submit" name="up-vote" class="btn-flat up-vote">
+                <i class="material-icons">arrow_drop_up</i>
+              </button>
+            </form>
+
+            <span class="vote-count"></span>
+
+            <form class="pin-downvote-form"
+                  action="/downvote"
+                  method="post"
+                  class="down-vote">
+
+              <input class='pin-id-input' type="hidden" name="pin_id" value="">
+              <button type="submit" name="down-vote" class="btn-flat down-vote">
+                <i class="material-icons">arrow_drop_down</i>
+              </button>
+            </form>
+
+          </div>
+          </td>
+        <td>
+          <span class="formatted-address"></span>
+        </td>
+      </tr>
+    </table>
   </div>
 
   <div class="col s9">

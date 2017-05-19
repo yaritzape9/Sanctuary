@@ -11,13 +11,19 @@ function placeUserMarker(newMarkerlocation, newUserAddressString) {
   }
 }
 
-function placeDatabaseMarker(newMarkerlocation, newMarkerAddressString) {
+function placeDatabaseMarker(newMarkerlocation,
+                             newMarkerAddressString,
+                             newMarkerReportId,
+                             newMarkerReportScore) {
   var newDatabaseMarker = createMarker(newMarkerlocation);
 
-  setupNewInfoWindow(newDatabaseMarker, setWindowContent);
+  setupNewInfoWindow(newDatabaseMarker, next);
 
-  function setWindowContent(inputInfoWindow) {
-    inputInfoWindow.setContent(newMarkerAddressString);
+  function next(inputInfoWindow) {
+    setDbInfoWindow(inputInfoWindow,
+                    newMarkerAddressString,
+                    newMarkerReportId,
+                    newMarkerReportScore);
   }
 }
 
@@ -34,25 +40,96 @@ function setupNewInfoWindow(inputMarker, callback) {
   if (callback) { callback(newInfoWindow); }
 }
 
-function setUserInfoWindow(inputInfoWindow, inputLocation, inputAddressString) {
-
+function setUserInfoWindow(inputInfoWindow,
+                           inputLocation,
+                           inputAddressString) {
   setFormValues(inputLocation, inputAddressString, next);
 
   function next() {
-    getForm(next);
+    getNewPinInfoWindow(next);
 
-    function next(formHtml) {
-      inputInfoWindow.setContent(
-        '<span id="ask_if_report">Report raid at or near<br><br></span>' +
-        '<span id="address">' + inputAddressString +
-        ' </span><span id="question_mark">?</span><br><br>' + '<div id="new_pin">' + formHtml +'</div>'
-      );
+    function next(newPinInfoWindowHtml) {
+      inputInfoWindow.setContent(newPinInfoWindowHtml);
     }
   }
 }
 
+function setDbInfoWindow(inputInfoWindow,
+                         inputAddressString,
+                         inputReportId,
+                         inputMarkerReportScore) {
+
+  var $form;
+  getInfoWindowContents(next);
+
+  function next() {
+    setInfoWindowContents(next);
+
+    function next() {
+      setUpvotePinId(next);
+
+      function  next() {
+        setReportScore(next);
+
+        function next() {
+          setDownvotePinId(next);
+
+          function next() {
+            setFormattedAddress();
+          }
+        }
+      }
+    }
+  }
+
+
+  function setFormattedAddress() {
+    $('#report-' + inputReportId + ' .formatted-address').text(inputAddressString);
+  }
+
+  function setDownvotePinId(callback) {
+    $('#report-' + inputReportId +
+      ' .pin-downvote-form .pin-id-input').attr('value', inputReportId);
+
+    callback();
+  }
+
+  function setReportScore(callback) {
+    $('#report-' + inputReportId + ' .vote-count').text(inputMarkerReportScore);
+
+    callback();
+  }
+
+  function setUpvotePinId(callback) {
+    console.log($('#report-' + inputReportId).html());
+    $('#report-' + inputReportId +
+      ' .pin-upvote-form .pin-id-input').val(inputReportId);
+
+    callback();
+  }
+
+  function setInfoWindowContents(callback) {
+
+    inputInfoWindow.setContent(
+      '<div id="report-' + inputReportId + '">' +
+        $form +
+      '</div>'
+    );
+
+    callback();
+  }
+
+  function getInfoWindowContents(callback) {
+    $form = $('.existing-pin-info').html();
+
+    callback();
+  }
+
+}
+
+
 function getForm(callback) {
-  callback($('#_form').html());
+  callback($('#new-pin-infowindow').html());
 }
 
 function createMarker(inputLocation) {
@@ -87,19 +164,19 @@ function setFormValues(inputLocation, inputAddressString, callback) {
       }
     }
   }
-}
 
-function setFormLat(inputLat, callback) {
-  $('#_form #pin_latitude').val(inputLat);
-  callback();
-}
+  function setFormLat(inputLat, callback) {
+    $('#blank-form #pin_latitude').val(inputLat);
+    callback();
+  }
 
-function setFormLng(inputLng, callback) {
-  $('#_form #pin_longitude').val(inputLng);
-  callback();
-}
+  function setFormLng(inputLng, callback) {
+    $('#blank-form #pin_longitude').val(inputLng);
+    callback();
+  }
 
-function setFormAddress(inputAddress, callback) {
-  $('#_form #pin_address').val(inputAddress);
-  callback();
+  function setFormAddress(inputAddress, callback) {
+    $('#blank-form #pin_address').val(inputAddress);
+    callback();
+  }
 }

@@ -1,8 +1,8 @@
-var map;
 
 $( document ).ready(function() {
 });
 
+var map;
 var pinArray;
 var infoWindowArray = [];
 var userMarkerArray = [];
@@ -10,7 +10,6 @@ var infoWindowMarkerToSave;
 var geocoder;
 
 function initMap() {
-
   geocoder = new google.maps.Geocoder();
 
   centerMap();
@@ -27,12 +26,12 @@ function centerMap(position) {
     navigator.geolocation.getCurrentPosition(doButton);
 
     function doButton(position) {
-      console.log(position);
+      // console.log(position);
       var latLngLiteral = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      console.log(latLngLiteral);
+      // console.log(latLngLiteral);
 
       closeAllInfoWindows();
       removeUnsavedMarkers();
@@ -44,7 +43,7 @@ function centerMap(position) {
   google.maps.event.addListenerOnce(map, 'idle', function(){
 
     initAutocomplete();
-    
+
     navigator.geolocation.getCurrentPosition(function(position) {
       var latLngLiteral = {
         lat: position.coords.latitude,
@@ -64,11 +63,15 @@ function centerMap(position) {
     });
 
     request.done( function(response) {
+      console.log(response);
       for (var i = 0; i < response.length; i++) {
         var latLngLiteral = {
           lat: response[i].latitude,
           lng: response[i].longitude
         };
+
+        var reportId = response[i].id;
+        var reportScore = response[i].score;
 
         if (!response[i].address) {
           reverseGeocode(latLngLiteral, next);
@@ -78,7 +81,7 @@ function centerMap(position) {
       }
 
       function next(inputAddressString) {
-        placeDatabaseMarker(latLngLiteral, inputAddressString);
+        placeDatabaseMarker(latLngLiteral, inputAddressString, reportId, reportScore);
       }
     });
   });

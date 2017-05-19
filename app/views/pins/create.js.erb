@@ -1,12 +1,12 @@
 
-$('#_form #pin_latitude').val('');
-$('#_form #pin_longitude').val('');
-$('#_form #pin_address').val('');
+$('#blank-form #pin_latitude').val('');
+$('#blank-form #pin_longitude').val('');
+$('#blank-form #pin_address').val('');
 
-$('#ask_if_report').remove();
-$('#question_mark').remove();
-$('#new_pin form .btn').remove();
-$('#new_pin').append('<span>Report Saved</span>');
+$('#ask-if-report').remove();
+$('#question-mark').remove();
+$('#blank-form .btn').remove();
+$('#blank-form').append('<span>Report Saved</span>');
 
 markerArrayIndex = userMarkerArray.findIndex(function(element) {
   element == infoWindowMarkerToSave;
