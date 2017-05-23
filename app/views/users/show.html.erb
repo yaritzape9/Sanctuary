@@ -9,9 +9,9 @@
       <b><%=t '.make_sure'%></b><br>
       <%=t '.only_once'%></p>
   </blockquote>
-  
+
     <%= render 'users/messageform' %>
-  
+
     <div class="user-msg">
     <% if @user.alert_msg %>
       <b><%= t '.your_message'%>:</b><br> <%= @user.alert_msg %>
@@ -23,18 +23,16 @@
         <%= t '.if_targeted' %><br>
         <%= t '.once_clicked' %></p>
 
-    <% @user.contacts.each do |c|%>
-    <p class="contact-display">
-      <i class="tiny material-icons">phone</i>
-      <%= c.nickname %>: <%= c.phone_num %>
-    </p>
-    <% end %>
+    <div id="contact-list">
+      <% @user.contacts.each do |c|%>
+        <p class="contact-display">
+          <i class="tiny material-icons">phone</i>
+          <%= c.nickname %>: <%= c.phone_num %>
+        </p>
+      <% end %>
+    </div>
 
-    <% if @user.contacts.length <= 4  %>
-      <%= render 'contacts/new' %>
-    <% end %>
-
-    <% if @user.contacts.length == 5 %>
-      <b><p style="color: red;"><%="You cannot add more than 5 contacts."%></p></b>
-    <% end %>
+    <div class="new-contact-button">
+      <%= button_to t('.add_contact'), new_contact_path, method: 'get', remote: true, form_class:'get-contact-form waves-effect waves-light btn' %>
+    </div>
 </div>

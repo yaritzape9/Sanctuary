@@ -1,27 +1,40 @@
 class ContactsController < ApplicationController
 
   def new
-    @contact = Contact.new()
+    @contact = Contact.new
 
-    render 'new'
-  end
-
-  def create
-    @contact = Contact.new(contact_params)
-    @contact.user = current_user
-    @user = current_user.id
-
-    if @contact.user.contacts.length > 5
-      redirect_to user_path(@user)
-      flash[:alert] = "You are allowed 5 contacts."
-    elsif @contact.save
-        redirect_to user_path(@contact.user)
-    else
-        flash[:alert] = "Unable to save."
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
-  def edit
+  def create
+    if current_user
+      @contact = Contact.new(contact_params)
+      @contact.user = current_user
+
+      if current_user.contacts.length >= 5
+
+        respond_to do |format|
+          format.html {redirect_to user_path(current_user), flash[:notice] = "You may have a maximum of 5 contacts."}
+          format.js {render 'maxed'}
+        end
+      elsif @contact.save
+        respond_to do |format|
+          format.html {redirect_to user_path(current_user)}
+          format.js { }
+        end
+      else
+        respond_to do |format|
+          format.html {redirect_to user_path(current_user), flash[:alert] = "Unable to save."}
+          format.js {render 'error'}
+        end
+      end
+
+    else
+      redirect_to login_path
+    end
   end
 
   def update

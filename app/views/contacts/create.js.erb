@@ -1,0 +1,6 @@
+$('#contact-list').append('<p class="contact-display">'+
+                          '<i class="tiny material-icons">phone</i>'+
+                          '<%= @contact.nickname %>: <%= @contact.phone_num %>'+
+                          '</p>')
+
+$('.new_contact input').val('')

@@ -1,0 +1,4 @@
+newContactForm = "<%= j render :partial => 'new', :locals => { :contact => @contact } %>"
+
+$('.new-contact-button').prepend(newContactForm);
+$('.get-contact-form').hide();

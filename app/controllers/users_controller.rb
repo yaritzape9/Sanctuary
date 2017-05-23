@@ -19,6 +19,14 @@ class UsersController < ApplicationController
 
   def show
     @contact = Contact.new()
+
+    if current_user == @user
+      render 'show'
+    elsif current_user
+      redirect_to user_path(current_user)
+    else
+      redirect_to login_path
+    end
   end
 
   def edit

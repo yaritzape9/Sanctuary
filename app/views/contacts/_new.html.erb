@@ -1,11 +1,11 @@
 <div>
-<%= form_for(@contact) do |f| %>
- <%= f.label :nickname %>
- <%= f.text_field :nickname %>
- <%= f.label :phone_num %>
- <%= f.text_field :phone_num %>
-<div class="waves-effect waves-light btn">
- <%= f.submit t('.add_contact')%>
-</div>
- <% end %>
+  <%= form_for(contact, remote: true) do |f| %>
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
+    <%= f.label :phone_num %>
+    <%= f.text_field :phone_num %>
+    <div class="waves-effect waves-light btn">
+      <%= f.submit t('.add_contact')%>
+    </div>
+  <% end %>
 </div>
