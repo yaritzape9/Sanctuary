@@ -12,7 +12,7 @@ class TwilioController < ApplicationController
         contacts.each do |contact|
           begin
             phone_number = contact.phone_num
-            send_message(phone_number, alert_message)
+            send_text_message(phone_number, alert_message)
             flash[:success] = "Messages sent."
           rescue
             flash[:alert] = 'Something when wrong.'
@@ -26,7 +26,7 @@ end
 private
 
   def send_text_message(number, alert)
-    number_to_send_to = params[:number_to_send_to]
+    number_to_send_to = params[:number]
 
     ENV['TWILIO_ACCOUNT_SID']
     ENV['TWILIO_AUTH_TOKEN']
