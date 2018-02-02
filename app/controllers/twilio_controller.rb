@@ -21,22 +21,24 @@ class TwilioController < ApplicationController
     end
 
   redirect_to rights_path
-  
+
   end
 
   private
-  def send_message(number, alert)
-    twilio_number = ENV['TWILIO_NUMBER']
-    p twilio_number
-    p ENV['TWILIO_ACCOUNT_SID']
-    p ENV['TWILIO_AUTH_TOKEN']
-    client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+  def send_text_message(number, alert)
+    number_to_send_to = params[:number_to_send_to]
+
+    ENV['TWILIO_ACCOUNT_SID']
+    ENV['TWILIO_AUTH_TOKEN']
+    twilio_phone_number = ENV['TWILIO_NUMBER']
+
+    @twilio_client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
 
 
-    client.messages.create(
-      from: twilio_number,
-      to: number,
-      body: alert
+    @twilio_client.account.sms.messages.create(
+      :from => "+1#{twilio_phone_number}",
+      :to => number,
+      :body => alert
     )
   end
 end
