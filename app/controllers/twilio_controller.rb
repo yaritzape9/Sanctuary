@@ -21,16 +21,10 @@ class TwilioController < ApplicationController
     end
 
   redirect_to rights_path
-<<<<<<< HEAD
 
-  end
-
-  private
-=======
 end
 private
 
->>>>>>> b1f78179f34fb9b5981d436cbac404985c061788
   def send_text_message(number, alert)
     number_to_send_to = params[:number_to_send_to]
 
